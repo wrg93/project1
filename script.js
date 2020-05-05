@@ -512,12 +512,15 @@ savingListButton.addEventListener("click", function (){
     console.log(numberSubmit);
 })
 
+//variables to plug in dependents number
+var depNum = 0;
+
 //creation of General Supply List
 var generalSupplyList = document.createElement("UL");
 generalSupplyList.setAttribute("id", "generalSupplyList");
 generalSupplyList.setAttribute("class","list");
 document.body.appendChild(generalSupplyList);
-generalSupplyList = ["Water (one gallon per person per day for at least three days, for drinking and sanitation)", 
+generalSupplyList = [(depNum*3) + " Gallons of Water (one gallon per person per day for at least three days, for drinking and sanitation)", 
 "Food (at least a three-day supply of non-perishable food)",
 "Battery-powered or hand crank radio and a NOAA Weather Radio with tone alert",
  "Flashlight",
@@ -531,7 +534,29 @@ generalSupplyList = ["Water (one gallon per person per day for at least three da
  "Manual can opener (for food)",
  "Local maps",
  "Cell phone with chargers and a backup battery",
+ "Cloth face coverings (for everyone ages 2 and above)",
+"soap",
+"hand sanitizer", 
+"disinfecting wipes to disinfect surfaces",
+"Prescription medications",
+"Non-prescription medications such as pain relievers, anti-diarrhea medication, antacids or laxatives",
+"Prescription eyeglasses and contact lens solution",
+
+"Pet food and extra water for your pet",
+"Cash or traveler's checks",
+"Important family documents such as copies of insurance policies, identification and bank account records saved electronically or in a waterproof, portable container",
+"Sleeping bag or warm blanket for each person",
+"Complete change of clothing appropriate for your climate and sturdy shoes",
+"Fire extinguisher",
+"Matches in a waterproof container",
+"Feminine supplies and personal hygiene items",
+"Mess kits, paper cups, plates, paper towels and plastic utensils",
+"Paper and pencil"
+
+
 ];
+
+var childrenSupplyList = ["Books", "games", "puzzles", "Infant formula", "bottles", "diapers", "wipes", "diaper rash cream"]
 
 
 //function which takes items from any any list given and makes them buttons
