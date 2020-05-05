@@ -1,3 +1,4 @@
+
 var AL = {
     earthquakes: true,
     floods: false,
