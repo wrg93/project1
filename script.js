@@ -550,13 +550,13 @@ var dependants = document.getElementById("exampleFormControlSelect1");
 var babies = document.getElementById("exampleFormControlSelect2");
 var disability = document.getElementById("exampleFormControlSelect3");
 
-function generateList(generalSupplyList);
+function generateList(generalSupplyList){
 
 var dependants= dependants.options[length.selectedIndex].value;
 var babies= babies.options[length.selectedIndex].value;
 var disability= disability.options[length.selectedIndex].value;
 
-
+}
 function currentLocation () {
     // geolocation function to get latitude and longitude
     navigator.geolocation.getCurrentPosition(function(position){
@@ -589,4 +589,5 @@ function currentLocation () {
 }
 
 currentLocation();
+
 
