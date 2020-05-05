@@ -504,7 +504,7 @@ var WY= {
 //submit button which gathers results from two first select fields
 var savingListButton = document.createElement("BUTTON")
 savingListButton.textContent="Build my Life Saving List";
-document.body.appendChild(savingListButton);
+// document.body.appendChild(savingListButton);
 savingListButton.addEventListener("click", function (){
     var disabilitiesSubmit = document.getElementById("disabilities").value;
     var numberSubmit = document.getElementById("numberSelector").value;
@@ -516,7 +516,7 @@ savingListButton.addEventListener("click", function (){
 var generalSupplyList = document.createElement("UL");
 generalSupplyList.setAttribute("id", "generalSupplyList");
 generalSupplyList.setAttribute("class","list");
-document.body.appendChild(generalSupplyList);
+// document.body.appendChild(generalSupplyList);
 generalSupplyList = ["Water (one gallon per person per day for at least three days, for drinking and sanitation)", 
 "Food (at least a three-day supply of non-perishable food)",
 "Battery-powered or hand crank radio and a NOAA Weather Radio with tone alert",
@@ -539,7 +539,7 @@ function generateList (anyList){
     for (var i=0; i<anyList.length; i++){
     var supplyButton=document.createElement("BUTTON");
     supplyButton.innerHTML=anyList[i];
-    document.body.appendChild(supplyButton);
+    // document.body.appendChild(supplyButton);
     console.log(supplyButton);
     }
 }
@@ -559,8 +559,8 @@ function currentLocation () {
         $.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + long + "&key=AIzaSyCfzql8n3orawbtaEJs17tPctto036AFeg",function(){
             // create img element and getting map image of longitude and latitude location and append to index.html
             var imgEl = $("<img>");
-            imgEl.attr("src", "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + long + "&zoom=13&size=350x350&key=AIzaSyCfzql8n3orawbtaEJs17tPctto036AFeg")
-                $("div").append(imgEl)
+            imgEl.attr("src", "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + long + "&zoom=13&size=250x250&key=AIzaSyCfzql8n3orawbtaEJs17tPctto036AFeg")
+                $("#current-location").append(imgEl)
             
         });
         //  call to mapquest API to get city and state of longitude and latitude
@@ -572,12 +572,12 @@ function currentLocation () {
             city1 = response.results[0].locations[0].adminArea4
             state1 = response.results[0].locations[0].adminArea3
             console.log(response)
-            var h1El = $("<h1>")
-            h1El.text("You are in " + city1 + ", " +state1)
-            $("div").prepend(h1El)
+            var h6El = $("<h6>")
+            h6El.text("You are in " + city1 + ", " +state1)
+            $("#current-location").prepend(h6El)
         })
     });
 }
 
-// currentLocation();
+currentLocation();
 
