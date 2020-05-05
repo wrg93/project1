@@ -1,6 +1,6 @@
 //Selector for Number of dependents
 var numberSelector = document.createElement("SELECT");
-numberSelector.setAttribute("id", "mySelect");
+numberSelector.setAttribute("id", "numberSelector");
 document.body.appendChild(numberSelector);
 
 var optionOne = document.createElement("OPTION");
@@ -63,3 +63,13 @@ optionNo.setAttribute("value", "optionNo");
 optionNo.textContent="No";
 disabilities.appendChild(optionNo);
 
+//submit button which gathers results from two first select fields
+var savingListButton = document.createElement("BUTTON")
+savingListButton.textContent="Build my Life Saving List";
+document.body.appendChild(savingListButton);
+savingListButton.addEventListener("click", function (){
+    var disabilitiesSubmit = document.getElementById("disabilities").value;
+    var numberSubmit = document.getElementById("numberSelector").value;
+    console.log(disabilitiesSubmit);
+    console.log(numberSubmit);
+})
