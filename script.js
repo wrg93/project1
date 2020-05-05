@@ -22,4 +22,34 @@ $(document).ready(function() {
           $(".error").css("display", "none");
         }
     });
-  });
+});
+
+
+//creating radio buttons confirming if user or dependents are handicapped
+var radioForm = document.createElement("FORM");
+document.body.appendChild(radioForm);
+
+var yesRadio = document.createElement("INPUT");
+yesRadio.setAttribute("type", "radio");
+yesRadio.setAttribute("id","yesRadio");
+yesRadio.setAttribute("name","radio")
+yesRadio.setAttribute("value","yes");
+radioForm.appendChild(yesRadio);
+
+var yesRadioLabel = document.createElement("LABEL");
+yesRadioLabel.setAttribute("for","yes");
+yesRadioLabel.textContent="Yes";
+yesRadio.appendChild(yesRadioLabel);
+
+
+var noRadio = document.createElement("INPUT");
+noRadio.setAttribute("type", "radio");
+noRadio.setAttribute("id","noRadio");
+noRadio.setAttribute("name","radio");
+noRadio.setAttribute("value","no");
+radioForm.appendChild(noRadio);
+
+var noRadioLabel = document.createElement("LABEL");
+noRadioLabel.setAttribute("for","noRadio");
+noRadioLabel.textContent="No";
+noRadio.appendChild(noRadioLabel);
