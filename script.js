@@ -1,3 +1,5 @@
+currentLocation();
+
 //Selector for Number of dependents
 var numberSelector = document.createElement("SELECT");
 numberSelector.setAttribute("id", "numberSelector");
@@ -108,5 +110,37 @@ function generateList (anyList){
 
 generateList(generalSupplyList);
 
+
+
+function currentLocation () {
+    // geolocation function to get latitude and longitude
+    navigator.geolocation.getCurrentPosition(function(position){
+        console.log(position);
+        var lat = position.coords.latitude;
+        var long= position.coords.longitude;
+        
+        // call to google API to get location by longitude and latitude
+        $.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + long + "&key=AIzaSyCfzql8n3orawbtaEJs17tPctto036AFeg",function(){
+            // create img element and getting map image of longitude and latitude location and append to index.html
+            var imgEl = $("<img>");
+            imgEl.attr("src", "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + long + "&zoom=13&size=350x350&key=AIzaSyCfzql8n3orawbtaEJs17tPctto036AFeg")
+                $("div").append(imgEl)
+            
+        });
+        //  call to mapquest API to get city and state of longitude and latitude
+        var queryURL = "http://www.mapquestapi.com/geocoding/v1/address?key=iJn3fnxq6GVxdR2Czn9tCFjMdpiLFMPf&location=" + lat + "," + long;
+        $.ajax({
+            url: queryURL,
+            method: "GET"
+        }).then (function(response){
+            city1 = response.results[0].locations[0].adminArea4
+            state1 = response.results[0].locations[0].adminArea3
+            console.log(response)
+            var h1El = $("<h1>")
+            h1El.text("You are in " + city1 + ", " +state1)
+            $("div").prepend(h1El)
+        })
+    });
+}
 
 
