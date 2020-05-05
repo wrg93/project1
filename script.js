@@ -73,3 +73,23 @@ savingListButton.addEventListener("click", function (){
     console.log(disabilitiesSubmit);
     console.log(numberSubmit);
 })
+
+//creation of General Supply List
+var generalSupplyList = document.createElement("UL");
+generalSupplyList.setAttribute("id", "generalSupplyList");
+document.body.appendChild(generalSupplyList);
+generalSupplyList = ["Water", "Food", "Radio", "Flashlight"];
+
+
+//function which takes items from any any list given and makes them buttons
+function generateList (anyList){
+    for (var i=0; i<anyList.length; i++){
+    var supplyButton=document.createElement("BUTTON");
+    supplyButton.innerHTML=anyList[i];
+    document.body.appendChild(supplyButton);
+    console.log(supplyButton);
+    }
+}
+
+generateList(generalSupplyList);
+
