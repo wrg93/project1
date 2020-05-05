@@ -85,6 +85,7 @@ generalSupplyList = ["Water", "Food", "Radio", "Flashlight"];
 function generateList (anyList){
     for (var i=0; i<anyList.length; i++){
     var supplyButton=document.createElement("BUTTON");
+    supplyButton.setAttribute("class", "list");
     supplyButton.innerHTML=anyList[i];
     document.body.appendChild(supplyButton);
     console.log(supplyButton);
@@ -93,3 +94,20 @@ function generateList (anyList){
 
 generateList(generalSupplyList);
 
+//On click event to add and display basket items from local storage
+var basketArray = [];
+$(".list").on("click", function(event){
+    this.setAttribute("class","toBeRemoved");
+    basketArray.push(this.innerHTML);
+    localStorage.setItem("basket",JSON.stringify(basketArray));
+    renderBasket();
+})
+
+//function that renders Basket Items
+function renderBasket(){
+    basketItems = localStorage.getItem("basket");
+    if (basketItems === null){
+        return;
+    }
+    console.log(basketItems);
+}
