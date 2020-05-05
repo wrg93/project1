@@ -588,6 +588,6 @@ function currentLocation () {
     });
 }
 
-currentLocation();
+// currentLocation();
 
 
