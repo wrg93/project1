@@ -544,8 +544,17 @@ function generateList (anyList){
     }
 }
 
-generateList(generalSupplyList);
 
+
+var dependants = document.getElementById("exampleFormControlSelect1");
+var babies = document.getElementById("exampleFormControlSelect2");
+var disability = document.getElementById("exampleFormControlSelect3");
+
+function generateList(generalSupplyList);
+
+var dependants= dependants.options[length.selectedIndex].value;
+var babies= babies.options[length.selectedIndex].value;
+var disability= disability.options[length.selectedIndex].value;
 
 
 function currentLocation () {
