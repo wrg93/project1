@@ -673,6 +673,7 @@ function currentLocation () {
             // create img element and getting map image of longitude and latitude location and append to index.html
             var imgEl = $("<img width=80%>");
             imgEl.attr("src", "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + long + "&zoom=13&size=250x250&key=AIzaSyCfzql8n3orawbtaEJs17tPctto036AFeg")
+            imgEl.attr("class", "map-image")
                 $("#current-location").append(imgEl)
             
         });
@@ -686,6 +687,7 @@ function currentLocation () {
             state1 = response.results[0].locations[0].adminArea3
             console.log(response)
             var h6El = $("<h6>")
+            h6El.attr("class", "city-name")
             h6El.text("You are in " + city1 + ", " +state1)
             weather(city1);
             $("#current-location").prepend(h6El)
@@ -739,8 +741,18 @@ function currentLocation () {
 
 currentLocation();
 
+// function to change location
+$("#new-location").on("click", function(){
+    event.preventDefault();
+    var city1 = $("input").val();
+    var state1 = $("select").val();
+    // weather(city1);
+    $(".map-image").attr("src", "https://maps.googleapis.com/maps/api/staticmap?center="+ city1 + "," + state1 + "&zoom=13&size=950x950&key=AIzaSyCfzql8n3orawbtaEJs17tPctto036AFeg")
+   $(".city-name").text("You are in " + city1 + ", " +state1)
 
+});
 
+// function to get weather
 function weather(city1){
     var apiKey = "bb06c0b8789f5256fcbbe492b33425e3";
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city1 + "&appid=" + apiKey + "&units=imperial";
@@ -754,14 +766,14 @@ function weather(city1){
     })
     .then(function(response){
         var icon = response.weather[0].icon;
-        console.log(response)
         var pEl = $("<p>Weather: " + response.main.temp +"°F; " + response.weather[0].description +  "</p>")
         imageEl=$("<img>")
         imageEl.attr("src", "http://openweathermap.org/img/wn/" + icon + "@2x.png")
         imageEl.attr("class", "weather-icon")
         $("#current-location").append(pEl)
         $("#current-location").append(imageEl)
-       
-        
     });
     }
+
+
+
