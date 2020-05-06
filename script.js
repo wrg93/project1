@@ -500,6 +500,7 @@ var WY= {
 };
 
 
+
 //submit button which gathers results from three first select fields
 
 $(".btn").click(function(){
@@ -678,9 +679,12 @@ function currentLocation () {
             var h6El = $("<h6>")
             h6El.text("You are in " + city1 + ", " +state1)
             $("#current-location").prepend(h6El)
-            
+            console.log(state1);
+            var State=state1.value;
+            console.log(State);
         })
     });
 }
 
 currentLocation();
+
