@@ -205,3 +205,13 @@ width: 80%;
 #lists{
   color: white;
 }
+
+#shopping-cart {
+
+  padding-top: 40px;
+}
+
+.twitter-timeline {
+
+  float: right;
+}
