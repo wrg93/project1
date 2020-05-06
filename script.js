@@ -509,12 +509,14 @@ $(".btn").click(function(){
     console.log(disabilitiesSubmit);
     console.log(numberSubmit);
     console.log(babiesSubmit);
+    //generateList(generalSupplyList);
 })
 
 //variables to plug in dependents number
 var depNum = 0;
 
-//creation of General Supply List
+
+//creation of Lists
 var generalSupplyList = document.createElement("UL");
 generalSupplyList.setAttribute("id", "generalSupplyList");
 generalSupplyList.setAttribute("class","list");
@@ -629,8 +631,8 @@ function generateList (anyList){
     console.log(supplyButton);
     }
 }
-
-//generateList(generalSupplyList);
+//putting this hear as a place holder for now, Ideally would go under generate my list button but having trouble with that and want to work on local storage
+generateList(generalSupplyList);
 
 //On click event to add and display basket items from local storage
 var basketArray = [];
@@ -648,6 +650,7 @@ function renderBasket(){
         return;
     }
     console.log(basketItems);
+    document.body.appendChild(basketItems);
 }
 
 
