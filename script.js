@@ -500,23 +500,24 @@ var WY= {
 };
 
 
+//submit button which gathers results from three first select fields
 
-//submit button which gathers results from two first select fields
-var savingListButton = document.createElement("BUTTON")
-savingListButton.textContent="Build my Life Saving List";
-// document.body.appendChild(savingListButton);
-savingListButton.addEventListener("click", function (){
-    var disabilitiesSubmit = document.getElementById("disabilities").value;
-    var numberSubmit = document.getElementById("numberSelector").value;
+$(".btn").click(function(){
+    var disabilitiesSubmit = document.getElementById("exampleFormControlSelect3").value;
+    var numberSubmit = document.getElementById("exampleFormControlSelect1").value;
+    var babiesSubmit = document.getElementById("exampleFormControlSelect2").value;
     console.log(disabilitiesSubmit);
     console.log(numberSubmit);
+    console.log(babiesSubmit);
 })
+
+//variables to plug in dependents number
+var depNum = 0;
 
 //creation of General Supply List
 var generalSupplyList = document.createElement("UL");
 generalSupplyList.setAttribute("id", "generalSupplyList");
 generalSupplyList.setAttribute("class","list");
-// document.body.appendChild(generalSupplyList);
 generalSupplyList = ["Water (one gallon per person per day for at least three days, for drinking and sanitation)", 
 "Food (at least a three-day supply of non-perishable food)",
 "Battery-powered or hand crank radio and a NOAA Weather Radio with tone alert",
@@ -531,32 +532,125 @@ generalSupplyList = ["Water (one gallon per person per day for at least three da
  "Manual can opener (for food)",
  "Local maps",
  "Cell phone with chargers and a backup battery",
+ "Cloth face coverings (for everyone ages 2 and above)",
+"soap",
+"hand sanitizer", 
+"disinfecting wipes to disinfect surfaces",
+"Prescription medications",
+"Non-prescription medications such as pain relievers, anti-diarrhea medication, antacids or laxatives",
+"Prescription eyeglasses and contact lens solution",
+
+"Pet food and extra water for your pet",
+"Cash or traveler's checks",
+"Important family documents such as copies of insurance policies, identification and bank account records saved electronically or in a waterproof, portable container",
+"Sleeping bag or warm blanket for each person",
+"Complete change of clothing appropriate for your climate and sturdy shoes",
+"Fire extinguisher",
+"Matches in a waterproof container",
+"Feminine supplies and personal hygiene items",
+"Mess kits, paper cups, plates, paper towels and plastic utensils",
+"Paper and pencil"
+
+
 ];
 
+var childrenSupplyList = ["Books", "games", "puzzles", "Infant formula", "bottles", "diapers", "wipes", "diaper rash cream"];
+
+var earthquakeSupplyList = [
+    "Practice Drop, Cover, and Hold On with family and coworkers",
+    "Secure heavy items in your home like bookcases, refrigerators, televisions and objects that hang on walls",
+    "Store heavy and breakable objects on low shelves",
+    "Create a family emergency communications plan that has an out-of-state contact. Plan where to meet if you get separated.",
+    "Consider obtaining an earthquake insurance policy. A standard homeowner’s insurance policy does not cover earthquake damage",
+    "Consider making improvements to your building to fix structural issues that could cause your building to collapse during an earthquake"
+
+]
+
+var floodSupplyList = [
+    "Know types of flood risk in your area. Visit FEMA’s Flood Map Service Center for information",
+    "Sign up for your community’s warning system. The Emergency Alert System (EAS) and National Oceanic and Atmospheric Administration (NOAA) Weather Radio also provide emergency alerts",
+    "If flash flooding is a risk in your location monitor potential signs, such as heavy rain",
+    "Learn and practice evacuation routes, shelter plans and flash flood response",
+    "Build an emergency supply kit in case you have to leave immediately or if services are cut off",
+    "Purchase or renew a flood insurance policy. Homeowner’s policies do not cover flooding. It typically takes up to 30 days for a policy to go into effect so the time to buy is well before a disaster. Get flood coverage under the National Flood Insurance Program (NFIP).",
+    "Keep important documents in a waterproof container",
+    "Create password-protected digital copies",
+    "Move valuables to higher levels",
+    "Declutter drains and gutters",
+    "Install check valves",
+    "Consider a sump pump with a battery."
+
+]
+
+var hurricaneSupplyList = [
+    "bring in outside furniture",
+    "You may have to evacuate quickly due to a hurricane. Learn your evacuation routes, practice with household, pets, and identify where you will stay",
+    "bring in outside furniture",
+    "consider hurricane shutters",
+]
+
+var tornadoSupplyList = [
+    "Know the signs of a tornado, including a rotating, funnel-shaped cloud; an approaching cloud of debris; or a loud roar—similar to a freight train",
+"Sign up for your community’s warning system. The Emergency Alert System (EAS) and National Oceanic and Atmospheric Administration (NOAA) Weather Radio also provide emergency alerts. If your community has sirens, then become familiar with the warning tone.",
+"Pay attention to weather reports. Meteorologists can predict when conditions might be right for a tornado",
+"Identify and practice going to a safe shelter, while following the latest social and physical-distancing and other health safety guidelines from the Centers for Disease Control and Prevention and your local health authorities, in the event of high winds, such as a safe room built using FEMA criteria or a storm shelter built to ICC 500 standards. The next best protection is a small, interior, windowless room on the lowest level of a sturdy building.",
+]
+
+var widlfireSupplyList = [
+    "Know your community’s evacuation plans and find several ways to leave the area. Drive the evacuation routes and find shelter locations. Have a plan for pets and livestock.",
+    "N95 mask",
+    "Designate a room that can be closed off from outside air. Close all doors and windows. Set up a portable air cleaner to keep indoor pollution levels low when smoky conditions exist.",
+    "Keep important documents in a fireproof, safe place. Create password-protected digital copies.",
+    "Use fire-resistant materials to build, renovate, or make repairs.",
+    "Find an outdoor water source with a hose that can reach any area of your property.",
+    "Create a fire-resistant zone that is free of leaves, debris, or flammable materials for at least 30 feet from your home.",
+    "Review insurance coverage to make sure it is enough to replace your property.",
+    "Pay attention to air quality alerts.",
+]
+
+var zombieSupplyList = [
+    "cross-bow",
+    "strong deodarant",
+    "sturdy helmet",
+]
+
+var alienSupplyList = [
+    "anti-abduction boots",
+    "tin-foil hat",
+]
 
 //function which takes items from any any list given and makes them buttons
 function generateList (anyList){
     for (var i=0; i<anyList.length; i++){
     var supplyButton=document.createElement("BUTTON");
     supplyButton.innerHTML=anyList[i];
-    // document.body.appendChild(supplyButton);
+    supplyButton.setAttribute("class", "list");
+    document.body.appendChild(supplyButton);
     console.log(supplyButton);
     }
 }
 
+//generateList(generalSupplyList);
 
+//On click event to add and display basket items from local storage
+var basketArray = [];
+$(".list").on("click", function(){
+    this.setAttribute("class","toBeRemoved");
+    basketArray.push(this.innerHTML);
+    localStorage.setItem("basket",JSON.stringify(basketArray));
+    renderBasket();
+})
 
-var dependants = document.getElementById("exampleFormControlSelect1");
-var babies = document.getElementById("exampleFormControlSelect2");
-var disability = document.getElementById("exampleFormControlSelect3");
-
-function generateList(generalSupplyList){
-
-var dependants= dependants.options[length.selectedIndex].value;
-var babies= babies.options[length.selectedIndex].value;
-var disability= disability.options[length.selectedIndex].value;
-
+//function that renders Basket Items
+function renderBasket(){
+    basketItems = localStorage.getItem("basket");
+    if (basketItems === null){
+        return;
+    }
+    console.log(basketItems);
 }
+
+
 function currentLocation () {
     // geolocation function to get latitude and longitude
     navigator.geolocation.getCurrentPosition(function(position){
@@ -584,10 +678,9 @@ function currentLocation () {
             var h6El = $("<h6>")
             h6El.text("You are in " + city1 + ", " +state1)
             $("#current-location").prepend(h6El)
+            
         })
     });
 }
 
-// currentLocation();
-
-
+currentLocation();
