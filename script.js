@@ -547,6 +547,7 @@ generalSupplyList = ["Water (one gallon per person per day for at least three da
 ];
 
 var childrenSupplyList = ["Books", "games", "puzzles", "Infant formula", "bottles", "diapers", "wipes", "diaper rash cream"];
+childrenSupplyList.setAttribute("class","list");
 
 var disabilitiesSupplyList = [
     "Be ready to explain to first responders that you need to evacuate and choose to go to a shelter with your family, service animal, caregiver, personal assistant and your assistive technology devices and supplies.",
@@ -564,6 +565,7 @@ var disabilitiesSupplyList = [
     "The U.S. Department of Health and Human Services' online tool helps people locate and access their electronic health records from a variety of sources.",
     "Plan for children with disabilities and people who may have difficulty in unfamiliar or chaotic environments.",
 ]
+disabilitiesSupplyList.setAttribute("class","list");
 
 var earthquakeSupplyList = [
     "Practice Drop, Cover, and Hold On with family and coworkers",
@@ -738,9 +740,4 @@ function currentLocation () {
 
 currentLocation();
 
-function userList(){
-
-}
-
-//submit button which gathers results from three first select fields
 
