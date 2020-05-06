@@ -215,3 +215,22 @@ width: 80%;
 
   float: right;
 }
+
+#disaster-list {
+
+  text-align: center;
+  font-weight: 500;
+  font-size: 25px;
+}
+
+.fa-cart-arrow-down{
+
+ text-align: center;
+}
+
+#lists {
+  overflow: auto; 
+  width:300px; 
+  height:400px;
+  
+}
