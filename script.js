@@ -501,15 +501,15 @@ var WY= {
 
 
 
-//submit button which gathers results from two first select fields
-var savingListButton = document.createElement("BUTTON")
-savingListButton.textContent="Build my Life Saving List";
-document.body.appendChild(savingListButton);
-savingListButton.addEventListener("click", function (){
-    var disabilitiesSubmit = document.getElementById("disabilities").value;
-    var numberSubmit = document.getElementById("numberSelector").value;
+//submit button which gathers results from three first select fields
+
+$(".btn").click(function(){
+    var disabilitiesSubmit = document.getElementById("exampleFormControlSelect3").value;
+    var numberSubmit = document.getElementById("exampleFormControlSelect1").value;
+    var babiesSubmit = document.getElementById("exampleFormControlSelect2").value;
     console.log(disabilitiesSubmit);
     console.log(numberSubmit);
+    console.log(babiesSubmit);
 })
 
 //variables to plug in dependents number
@@ -519,8 +519,7 @@ var depNum = 0;
 var generalSupplyList = document.createElement("UL");
 generalSupplyList.setAttribute("id", "generalSupplyList");
 generalSupplyList.setAttribute("class","list");
-document.body.appendChild(generalSupplyList);
-generalSupplyList = [(depNum*3) + " Gallons of Water (one gallon per person per day for at least three days, for drinking and sanitation)", 
+generalSupplyList = ["Water (one gallon per person per day for at least three days, for drinking and sanitation)", 
 "Food (at least a three-day supply of non-perishable food)",
 "Battery-powered or hand crank radio and a NOAA Weather Radio with tone alert",
  "Flashlight",
@@ -564,22 +563,31 @@ function generateList (anyList){
     for (var i=0; i<anyList.length; i++){
     var supplyButton=document.createElement("BUTTON");
     supplyButton.innerHTML=anyList[i];
+    supplyButton.setAttribute("class", "list");
     document.body.appendChild(supplyButton);
     console.log(supplyButton);
     }
 }
 
+//generateList(generalSupplyList);
 
+//On click event to add and display basket items from local storage
+var basketArray = [];
+$(".list").on("click", function(){
+    this.setAttribute("class","toBeRemoved");
+    basketArray.push(this.innerHTML);
+    localStorage.setItem("basket",JSON.stringify(basketArray));
+    renderBasket();
+})
 
-var dependants = document.getElementById("exampleFormControlSelect1");
-var babies = document.getElementById("exampleFormControlSelect2");
-var disability = document.getElementById("exampleFormControlSelect3");
-
-function generateList(generalSupplyList);
-
-var dependants= dependants.options[length.selectedIndex].value;
-var babies= babies.options[length.selectedIndex].value;
-var disability= disability.options[length.selectedIndex].value;
+//function that renders Basket Items
+function renderBasket(){
+    basketItems = localStorage.getItem("basket");
+    if (basketItems === null){
+        return;
+    }
+    console.log(basketItems);
+}
 
 
 function currentLocation () {
@@ -593,8 +601,8 @@ function currentLocation () {
         $.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + long + "&key=AIzaSyCfzql8n3orawbtaEJs17tPctto036AFeg",function(){
             // create img element and getting map image of longitude and latitude location and append to index.html
             var imgEl = $("<img>");
-            imgEl.attr("src", "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + long + "&zoom=13&size=350x350&key=AIzaSyCfzql8n3orawbtaEJs17tPctto036AFeg")
-                $("div").append(imgEl)
+            imgEl.attr("src", "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + long + "&zoom=13&size=250x250&key=AIzaSyCfzql8n3orawbtaEJs17tPctto036AFeg")
+                $("#current-location").append(imgEl)
             
         });
         //  call to mapquest API to get city and state of longitude and latitude
@@ -606,12 +614,13 @@ function currentLocation () {
             city1 = response.results[0].locations[0].adminArea4
             state1 = response.results[0].locations[0].adminArea3
             console.log(response)
-            var h1El = $("<h1>")
-            h1El.text("You are in " + city1 + ", " +state1)
-            $("div").prepend(h1El)
+            var h6El = $("<h6>")
+            h6El.text("You are in " + city1 + ", " +state1)
+            $("#current-location").prepend(h6El)
         })
     });
 }
 
-// currentLocation();
+currentLocation();
+
 
