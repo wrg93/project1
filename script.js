@@ -500,17 +500,7 @@ var WY= {
 };
 
 
-//submit button which gathers results from three first select fields
 
-$(".btn").click(function(){
-    var disabilitiesSubmit = document.getElementById("exampleFormControlSelect3").value;
-    var numberSubmit = document.getElementById("exampleFormControlSelect1").value;
-    var babiesSubmit = document.getElementById("exampleFormControlSelect2").value;
-    console.log(disabilitiesSubmit);
-    console.log(numberSubmit);
-    console.log(babiesSubmit);
-    //generateList(generalSupplyList);
-})
 
 //variables to plug in dependents number
 var depNum = 0;
@@ -632,7 +622,7 @@ function generateList (anyList){
     }
 }
 //putting this hear as a place holder for now, Ideally would go under generate my list button but having trouble with that and want to work on local storage
-generateList(generalSupplyList);
+//generateList(generalSupplyList);
 
 //On click event to add and display basket items from local storage
 var basketArray = [];
@@ -681,6 +671,18 @@ function currentLocation () {
             var h6El = $("<h6>")
             h6El.text("You are in " + city1 + ", " +state1)
             $("#current-location").prepend(h6El)
+
+
+        $(".btn").click(function(){
+            var disabilitiesSubmit = document.getElementById("exampleFormControlSelect3").value;
+            var numberSubmit = document.getElementById("exampleFormControlSelect1").value;
+            var babiesSubmit = document.getElementById("exampleFormControlSelect2").value;
+            console.log(disabilitiesSubmit);
+            console.log(numberSubmit);
+            console.log(babiesSubmit);
+            generateList(generalSupplyList);
+
+            //gathering which other lists to display based on state
             var calledState=window[state1];
             console.log(calledState);
             if (calledState.earthquakes=true){
@@ -705,7 +707,15 @@ function currentLocation () {
                 generateList(zombieSupplyList);
             }
         })
+        })
     });
 }
 
 currentLocation();
+
+function userList(){
+
+}
+
+//submit button which gathers results from three first select fields
+
