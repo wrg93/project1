@@ -500,21 +500,13 @@ var WY= {
 };
 
 
-//submit button which gathers results from three first select fields
 
-$(".btn").click(function(){
-    var disabilitiesSubmit = document.getElementById("exampleFormControlSelect3").value;
-    var numberSubmit = document.getElementById("exampleFormControlSelect1").value;
-    var babiesSubmit = document.getElementById("exampleFormControlSelect2").value;
-    console.log(disabilitiesSubmit);
-    console.log(numberSubmit);
-    console.log(babiesSubmit);
-})
 
 //variables to plug in dependents number
 var depNum = 0;
 
-//creation of General Supply List
+
+//creation of Lists
 var generalSupplyList = document.createElement("UL");
 generalSupplyList.setAttribute("id", "generalSupplyList");
 generalSupplyList.setAttribute("class","list");
@@ -555,6 +547,23 @@ generalSupplyList = ["Water (one gallon per person per day for at least three da
 ];
 
 var childrenSupplyList = ["Books", "games", "puzzles", "Infant formula", "bottles", "diapers", "wipes", "diaper rash cream"];
+
+var disabilitiesSupplyList = [
+    "Be ready to explain to first responders that you need to evacuate and choose to go to a shelter with your family, service animal, caregiver, personal assistant and your assistive technology devices and supplies.",
+    "Plan ahead for accessible transportation that you may need for evacuation or getting to a medical clinic. Work with local services, public transportation or paratransit to identify your local or private accessible transportation options.",
+    "Inform your support network where you keep your emergency supplies. You may want to consider giving one member a key to your house or apartment.",
+    "Contact your city or county government’s emergency management agency or office. Many local offices keep lists of people with disabilities so they can be helped quickly in a sudden emergency.",
+    "If you are dependent on dialysis or other life-sustaining treatment know the location and availability of more than one facility.",
+    "If you use medical equipment in your home that requires electricity, talk to your doctor or health care provider about how you can prepare for its use during a power outage.",
+    "Wear medical alert tags or bracelets.",
+    "If you have a communication disability make sure your emergency information says the best way to communicate with you.",
+    "If you use an augmentative communications device or other assistive technologies, plan how you will evacuate with the devices or how you will replace equipment if lost or destroyed. Keep model numbers and note where the equipment came from (Medicaid, Medicare, private insurance, etc.).",
+    "Plan how you will communicate with others if your equipment is not working, including laminated cards with phrases, pictures or pictograms.",
+    "Keep Braille/text communication cards, if used, for two-way communication.",
+    "Get preparedness tips for diabetics.",
+    "The U.S. Department of Health and Human Services' online tool helps people locate and access their electronic health records from a variety of sources.",
+    "Plan for children with disabilities and people who may have difficulty in unfamiliar or chaotic environments.",
+]
 
 var earthquakeSupplyList = [
     "Practice Drop, Cover, and Hold On with family and coworkers",
@@ -629,7 +638,7 @@ function generateList (anyList){
     console.log(supplyButton);
     }
 }
-
+//putting this hear as a place holder for now, Ideally would go under generate my list button but having trouble with that and want to work on local storage
 //generateList(generalSupplyList);
 
 //On click event to add and display basket items from local storage
@@ -648,9 +657,10 @@ function renderBasket(){
         return;
     }
     console.log(basketItems);
+    document.body.appendChild(basketItems);
 }
 
-
+var state1="";
 function currentLocation () {
     // geolocation function to get latitude and longitude
     navigator.geolocation.getCurrentPosition(function(position){
@@ -679,8 +689,50 @@ function currentLocation () {
             h6El.text("You are in " + city1 + ", " +state1)
             weather(city1);
             $("#current-location").prepend(h6El)
-           
-            
+
+
+        $(".btn").click(function(){
+            var disabilitiesSubmit = document.getElementById("exampleFormControlSelect3").value;
+            var numberSubmit = document.getElementById("exampleFormControlSelect1").value;
+            var babiesSubmit = document.getElementById("exampleFormControlSelect2").value;
+            console.log(disabilitiesSubmit);
+            console.log(numberSubmit);
+            console.log(babiesSubmit);
+            generateList(generalSupplyList);
+
+            if (babiesSubmit!==0){
+                generateList(childrenSupplyList);
+            }
+
+            if (disabilitiesSubmit="yes"){
+                generateList(disabilitiesSupplyList);
+            }
+
+            //gathering which other lists to display based on state
+            var calledState=window[state1];
+            console.log(calledState);
+            if (calledState.earthquakes=true){
+                generateList(earthquakeSupplyList);
+            }
+            if (calledState.floods=true){
+                generateList(floodSupplyList);
+            }
+            if (calledState.hurricanes=true){
+                generateList(hurricaneSupplyList);
+            }
+            if (calledState.tornados=true){
+                generateList(tornadoSupplyList);
+            }
+            if (calledState.wildfires=true){
+                generateList(widlfireSupplyList);
+            }
+            if (calledState.alienInvasion=true){
+                generateList(alienSupplyList);
+            }
+            if (calledState.zombieApocalypse=true){
+                generateList(zombieSupplyList);
+            }
+        })
         })
     });
 }
