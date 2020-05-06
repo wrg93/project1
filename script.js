@@ -661,7 +661,7 @@ function currentLocation () {
         // call to google API to get location by longitude and latitude
         $.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + long + "&key=AIzaSyCfzql8n3orawbtaEJs17tPctto036AFeg",function(){
             // create img element and getting map image of longitude and latitude location and append to index.html
-            var imgEl = $("<img>");
+            var imgEl = $("<img width=80%>");
             imgEl.attr("src", "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + long + "&zoom=13&size=250x250&key=AIzaSyCfzql8n3orawbtaEJs17tPctto036AFeg")
                 $("#current-location").append(imgEl)
             
