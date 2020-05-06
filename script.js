@@ -632,17 +632,33 @@ var alienSupplyList = [
 
 var listsDiv=document.getElementById("lists");
 
+var supplyList = document.createElement("ul");
+    supplyList.style.listStyleType="none";
+    listsDiv.appendChild(supplyList);
+
 function generateList (anyList){
+    
     for (var i=0; i<anyList.length; i++){
-    var supplyItems=document.createElement("UL");
+    var supplyItems=document.createElement("li");
     supplyItems.innerHTML=anyList[i];
     supplyItems.setAttribute("class", "list");
-    listsDiv.appendChild(supplyItems);
-    console.log(supplyItems);
+    supplyList.appendChild(supplyItems);
+
+    var supplySpan=document.createElement("span");
+    supplySpan.setAttribute("class", "fa-li");
+    supplyItems.appendChild(supplySpan);
+
+    var supplyIcon = document.createElement("i");
+    supplyIcon.setAttribute("class", "fas fa-check-square");
+    supplySpan.appendChild(supplyIcon);
+
+    
     }
 }
-//putting this hear as a place holder for now, Ideally would go under generate my list button but having trouble with that and want to work on local storage
-//generateList(generalSupplyList);
+
+
+
+
 
 //On click event to add and display basket items from local storage
 var basketArray = [];
