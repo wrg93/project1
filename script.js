@@ -635,7 +635,7 @@ var listsDiv=document.getElementById("lists");
 function generateList (anyList){
     for (var i=0; i<anyList.length; i++){
     var supplyItems=document.createElement("UL");
-    supplyItems.innerHTML=anyList[i];
+    supplyItems.innerHTML= anyList[i];
     supplyItems.setAttribute("class", "list");
     listsDiv.appendChild(supplyItems);
     console.log(supplyItems);
