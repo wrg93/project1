@@ -500,7 +500,6 @@ var WY= {
 };
 
 
-
 //submit button which gathers results from three first select fields
 
 $(".btn").click(function(){
@@ -555,8 +554,47 @@ generalSupplyList = ["Water (one gallon per person per day for at least three da
 
 ];
 
-var childrenSupplyList = ["Books", "games", "puzzles", "Infant formula", "bottles", "diapers", "wipes", "diaper rash cream"]
+var childrenSupplyList = ["Books", "games", "puzzles", "Infant formula", "bottles", "diapers", "wipes", "diaper rash cream"];
 
+var earthquakeSupplyList = [
+    "Practice Drop, Cover, and Hold On with family and coworkers",
+    "Secure heavy items in your home like bookcases, refrigerators, televisions and objects that hang on walls",
+    "Store heavy and breakable objects on low shelves",
+    "Create a family emergency communications plan that has an out-of-state contact. Plan where to meet if you get separated.",
+    "Consider obtaining an earthquake insurance policy. A standard homeowner’s insurance policy does not cover earthquake damage",
+    "Consider making improvements to your building to fix structural issues that could cause your building to collapse during an earthquake"
+
+]
+
+var floodSupplyList = [
+    "Know types of flood risk in your area. Visit FEMA’s Flood Map Service Center for information",
+    "Sign up for your community’s warning system. The Emergency Alert System (EAS) and National Oceanic and Atmospheric Administration (NOAA) Weather Radio also provide emergency alerts",
+    "If flash flooding is a risk in your location monitor potential signs, such as heavy rain",
+    "Learn and practice evacuation routes, shelter plans and flash flood response",
+    "Build an emergency supply kit in case you have to leave immediately or if services are cut off",
+    "Purchase or renew a flood insurance policy. Homeowner’s policies do not cover flooding. It typically takes up to 30 days for a policy to go into effect so the time to buy is well before a disaster. Get flood coverage under the National Flood Insurance Program (NFIP).",
+    "Keep important documents in a waterproof container",
+    "Create password-protected digital copies",
+    "Move valuables to higher levels",
+    "Declutter drains and gutters",
+    "Install check valves",
+    "Consider a sump pump with a battery."
+
+]
+
+var hurricaneSupplyList = [
+    "bring in outside furniture",
+    "You may have to evacuate quickly due to a hurricane. Learn your evacuation routes, practice with household, pets, and identify where you will stay",
+    "bring in outside furniture",
+    "consider hurricane shutters",
+]
+
+var tornadoList = [
+    "Know the signs of a tornado, including a rotating, funnel-shaped cloud; an approaching cloud of debris; or a loud roar—similar to a freight train",
+"Sign up for your community’s warning system. The Emergency Alert System (EAS) and National Oceanic and Atmospheric Administration (NOAA) Weather Radio also provide emergency alerts. If your community has sirens, then become familiar with the warning tone.",
+"Pay attention to weather reports. Meteorologists can predict when conditions might be right for a tornado",
+"Identify and practice going to a safe shelter, while following the latest social and physical-distancing and other health safety guidelines from the Centers for Disease Control and Prevention and your local health authorities, in the event of high winds, such as a safe room built using FEMA criteria or a storm shelter built to ICC 500 standards. The next best protection is a small, interior, windowless room on the lowest level of a sturdy building.",
+]
 
 //function which takes items from any any list given and makes them buttons
 function generateList (anyList){
@@ -617,10 +655,9 @@ function currentLocation () {
             var h6El = $("<h6>")
             h6El.text("You are in " + city1 + ", " +state1)
             $("#current-location").prepend(h6El)
+            
         })
     });
 }
 
 currentLocation();
-
-
