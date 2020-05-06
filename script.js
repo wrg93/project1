@@ -653,7 +653,7 @@ function renderBasket(){
     document.body.appendChild(basketItems);
 }
 
-
+var state1="";
 function currentLocation () {
     // geolocation function to get latitude and longitude
     navigator.geolocation.getCurrentPosition(function(position){
@@ -664,7 +664,7 @@ function currentLocation () {
         // call to google API to get location by longitude and latitude
         $.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + long + "&key=AIzaSyCfzql8n3orawbtaEJs17tPctto036AFeg",function(){
             // create img element and getting map image of longitude and latitude location and append to index.html
-            var imgEl = $("<img>");
+            var imgEl = $("<img width=80%>");
             imgEl.attr("src", "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + long + "&zoom=13&size=250x250&key=AIzaSyCfzql8n3orawbtaEJs17tPctto036AFeg")
                 $("#current-location").append(imgEl)
             
@@ -681,7 +681,29 @@ function currentLocation () {
             var h6El = $("<h6>")
             h6El.text("You are in " + city1 + ", " +state1)
             $("#current-location").prepend(h6El)
-            
+            var calledState=window[state1];
+            console.log(calledState);
+            if (calledState.earthquakes=true){
+                generateList(earthquakeSupplyList);
+            }
+            if (calledState.floods=true){
+                generateList(floodSupplyList);
+            }
+            if (calledState.hurricanes=true){
+                generateList(hurricaneSupplyList);
+            }
+            if (calledState.tornados=true){
+                generateList(tornadoSupplyList);
+            }
+            if (calledState.wildfires=true){
+                generateList(widlfireSupplyList);
+            }
+            if (calledState.alienInvasion=true){
+                generateList(alienSupplyList);
+            }
+            if (calledState.zombieApocalypse=true){
+                generateList(zombieSupplyList);
+            }
         })
     });
 }

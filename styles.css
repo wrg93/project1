@@ -5,8 +5,7 @@ html {
   body {
     height: 100%;
     margin: 0;
-    overflow: hidden;
-    background: linear-gradient(to bottom, #202020, #111119);
+    background: linear-gradient(to bottom, #202020, #202020);
   }
   
   .rain {
@@ -18,15 +17,11 @@ html {
   }
   
   .rain.back-row {
-    display: none;
-    z-index: 1;
-    bottom: 60px;
+    z-index: -1;
+    height: 100%;
     opacity: 0.5;
   }
   
-  body.back-row-toggle .rain.back-row {
-    display: block;
-  }
   
   .drop {
     position: absolute;
@@ -80,12 +75,8 @@ html {
     opacity: 1;
     transform: scale(0);
     animation: splat 0.5s linear infinite;
-    display: none;
   }
   
-  body.splat-toggle .splat {
-    display: block;
-  }
   
   @keyframes splat {
     0% {
@@ -186,4 +177,9 @@ text-decoration-color: steelblue ;
 .container-fluid {
 padding: 0 40px;
 color: white;
+height: 100%;
+}
+
+#current-location {
+max-width: 400px;
 }
