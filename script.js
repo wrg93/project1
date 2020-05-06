@@ -589,11 +589,34 @@ var hurricaneSupplyList = [
     "consider hurricane shutters",
 ]
 
-var tornadoList = [
+var tornadoSupplyList = [
     "Know the signs of a tornado, including a rotating, funnel-shaped cloud; an approaching cloud of debris; or a loud roar—similar to a freight train",
 "Sign up for your community’s warning system. The Emergency Alert System (EAS) and National Oceanic and Atmospheric Administration (NOAA) Weather Radio also provide emergency alerts. If your community has sirens, then become familiar with the warning tone.",
 "Pay attention to weather reports. Meteorologists can predict when conditions might be right for a tornado",
 "Identify and practice going to a safe shelter, while following the latest social and physical-distancing and other health safety guidelines from the Centers for Disease Control and Prevention and your local health authorities, in the event of high winds, such as a safe room built using FEMA criteria or a storm shelter built to ICC 500 standards. The next best protection is a small, interior, windowless room on the lowest level of a sturdy building.",
+]
+
+var widlfireSupplyList = [
+    "Know your community’s evacuation plans and find several ways to leave the area. Drive the evacuation routes and find shelter locations. Have a plan for pets and livestock.",
+    "N95 mask",
+    "Designate a room that can be closed off from outside air. Close all doors and windows. Set up a portable air cleaner to keep indoor pollution levels low when smoky conditions exist.",
+    "Keep important documents in a fireproof, safe place. Create password-protected digital copies.",
+    "Use fire-resistant materials to build, renovate, or make repairs.",
+    "Find an outdoor water source with a hose that can reach any area of your property.",
+    "Create a fire-resistant zone that is free of leaves, debris, or flammable materials for at least 30 feet from your home.",
+    "Review insurance coverage to make sure it is enough to replace your property.",
+    "Pay attention to air quality alerts.",
+]
+
+var zombieSupplyList = [
+    "cross-bow",
+    "strong deodarant",
+    "sturdy helmet",
+]
+
+var alienSupplyList = [
+    "anti-abduction boots",
+    "tin-foil hat",
 ]
 
 //function which takes items from any any list given and makes them buttons
