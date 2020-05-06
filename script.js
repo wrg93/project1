@@ -755,7 +755,7 @@ function weather(city1){
     .then(function(response){
         
         console.log(response)
-        var pEl = $("<p>Weather in: " + response.main.temp +"; " + response.weather[0].description +  "</p>")
+        var pEl = $("<p>Weather: " + response.main.temp +"; " + response.weather[0].description +  "</p>")
         $("#current-location").append(pEl)
         
     });
