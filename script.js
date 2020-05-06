@@ -628,14 +628,17 @@ var alienSupplyList = [
     "tin-foil hat",
 ]
 
-//function which takes items from any any list given and makes them buttons
+//function which takes items from any any list given and appends them to list
+
+var listsDiv=document.getElementById("lists");
+
 function generateList (anyList){
     for (var i=0; i<anyList.length; i++){
-    var supplyButton=document.createElement("BUTTON");
-    supplyButton.innerHTML=anyList[i];
-    supplyButton.setAttribute("class", "list");
-    document.body.appendChild(supplyButton);
-    console.log(supplyButton);
+    var supplyItems=document.createElement("UL");
+    supplyItems.innerHTML= anyList[i];
+    supplyItems.setAttribute("class", "list");
+    listsDiv.appendChild(supplyItems);
+    console.log(supplyItems);
     }
 }
 //putting this hear as a place holder for now, Ideally would go under generate my list button but having trouble with that and want to work on local storage
