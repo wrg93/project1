@@ -712,7 +712,7 @@ function currentLocation () {
             $("#current-location").prepend(h6El)
 
 
-        $(".btn").click(function(){
+        $("#generate").click(function(){
             var disabilitiesSubmit = document.getElementById("exampleFormControlSelect3").value;
             var numberSubmit = document.getElementById("exampleFormControlSelect1").value;
             var babiesSubmit = document.getElementById("exampleFormControlSelect2").value;
