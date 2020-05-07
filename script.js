@@ -510,7 +510,7 @@ var depNum = 0;
 var generalSupplyList = document.createElement("UL");
 generalSupplyList.setAttribute("id", "generalSupplyList");
 generalSupplyList.setAttribute("class","list");
-generalSupplyList = ["Water (one gallon per person per day for at least three days, for drinking and sanitation)", 
+generalSupplyList = [depNum + "Water (one gallon per person per day for at least three days, for drinking and sanitation)", 
 "Food (at least a three-day supply of non-perishable food)",
 "Battery-powered or hand crank radio and a NOAA Weather Radio with tone alert",
  "Flashlight",
@@ -714,6 +714,12 @@ function currentLocation () {
 
         $("#generate").on("click",function(){
             if ($("#option1").parent().attr("class").includes("active")){
+            var disabilitiesSubmit = document.getElementById("exampleFormControlSelect3").value;
+            var numberSubmit = document.getElementById("exampleFormControlSelect1").value;
+            var babiesSubmit = document.getElementById("exampleFormControlSelect2").value;
+            depNum=parseInt(numberSubmit) + 1;
+            console.log(depNum);
+
             var calledState=window[state1];
             console.log(calledState);
             if (calledState.earthquakes=true){
@@ -732,14 +738,6 @@ function currentLocation () {
                 generateList(widlfireSupplyList);
             }
 
-            var disabilitiesSubmit = document.getElementById("exampleFormControlSelect3").value;
-            var numberSubmit = document.getElementById("exampleFormControlSelect1").value;
-            var babiesSubmit = document.getElementById("exampleFormControlSelect2").value;
-            console.log(disabilitiesSubmit);
-            console.log(numberSubmit);
-            console.log(babiesSubmit);
-
-           console.log(babiesSubmit);
             if (babiesSubmit!=="0"){
                 generateList(childrenSupplyList);
             }
@@ -756,17 +754,6 @@ function currentLocation () {
             if ($("#option3").parent().attr("class").includes("active")){
                 generateList(alienSupplyList);
             }}
-            
-
-            //gathering which other lists to display based on state
-           
-           
-            // if (calledState.alienInvasion=true){
-            //     generateList(alienSupplyList);
-            // }
-            // if (calledState.zombieApocalypse=true){
-            //     generateList(zombieSupplyList);
-            // }
         
         })
     });
