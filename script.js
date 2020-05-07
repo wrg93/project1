@@ -713,24 +713,50 @@ function currentLocation () {
 
 
         $("#generate").on("click",function(){
+            $("#disaster-prone").empty();
+            h4El= $("<h4>")
+            h4El.text(city1+", "+state1 + " is prone to: ")
+            $("#disaster-prone").append(h4El)
             if ($("#option1").parent().attr("class").includes("active")){
+                
             var calledState=window[state1];
-            console.log(calledState);
-            if (calledState.earthquakes=true){
+           
+            if (calledState.earthquakes==true){
+                console.log("true")
+                h5El= $("<h5>")
+                h5El.text("Earthquakes")
+                $("#disaster-prone").append(h5El)
                 generateList(earthquakeSupplyList);
             }
-            if (calledState.floods=true){
+            if (calledState.floods==true){
+                console.log("true")
+                h5El= $("<h5>")
+                h5El.text("Floods")
+                $("#lists").append(h5El)
                 generateList(floodSupplyList);
             }
-            if (calledState.hurricanes=true){
+            if (calledState.hurricanes==true){
+                console.log("true")
+                h5El= $("<h5>")
+                h5El.text("Hurricanes")
+                $("#lists").append(h5El)
                 generateList(hurricaneSupplyList);
             }
-            if (calledState.tornados=true){
+            if (calledState.tornados==true){
+                console.log("true")
+                h5El= $("<h5>")
+                h5El.text("Tornados")
+                $("#lists").append(h5El)
                 generateList(tornadoSupplyList);
             }
-            if (calledState.wildfires=true){
+            if (calledState.wildfires==true){
+                console.log("true")
+                h5El= $("<h5>")
+                h5El.text("Wildfires")
+                $("#disaster-prone").append(h5El)
                 generateList(widlfireSupplyList);
             }
+            
 
             var disabilitiesSubmit = document.getElementById("exampleFormControlSelect3").value;
             var numberSubmit = document.getElementById("exampleFormControlSelect1").value;
@@ -783,6 +809,90 @@ $("#new-location").on("click", function(){
     // weather(city1);
     $(".map-image").attr("src", "https://maps.googleapis.com/maps/api/staticmap?center="+ city1 + "," + state1 + "&zoom=13&size=950x950&key=AIzaSyCfzql8n3orawbtaEJs17tPctto036AFeg")
    $(".city-name").text("You are in " + city1 + ", " +state1)
+
+   $("#generate").on("click",function(){
+    $("#disaster-prone").empty();
+            h4El= $("<h4>")
+            h4El.text(city1+", "+state1 + " is prone to: ")
+            $("#disaster-prone").append(h4El)
+            
+    if ($("#option1").parent().attr("class").includes("active")){
+    var calledState=window[state1];
+    
+    if (calledState.earthquakes===true){
+        h5El= $("<h5>")
+        h5El.text("Earthquakes")
+        $("#disaster-prone").append(h5El)
+        generateList(earthquakeSupplyList);
+    }
+    if (calledState.floods===true){
+        h5El= $("<h5>")
+        h5El.text("Floods")
+        $("#disaster-prone").append(h5El)
+        generateList(floodSupplyList);
+    }
+    if (calledState.hurricanes===true){
+        h5El= $("<h5>")
+        h5El.text("Hurricanes")
+        $("#disaster-prone").append(h5El)
+        generateList(hurricaneSupplyList);
+    }
+    if (calledState.tornados===true){
+        h5El= $("<h5>")
+        h5El.text("Tornadoes")
+        $("#disaster-prone").append(h5El)
+        generateList(tornadoSupplyList);
+    }
+    if (calledState.wildfires===true){
+        h5El= $("<h5>")
+        h5El.text("Wildfires")
+        $("#disaster-prone").append(h5El)
+        generateList(widlfireSupplyList);
+    }
+    
+
+    var disabilitiesSubmit = document.getElementById("exampleFormControlSelect3").value;
+    var numberSubmit = document.getElementById("exampleFormControlSelect1").value;
+    var babiesSubmit = document.getElementById("exampleFormControlSelect2").value;
+    console.log(disabilitiesSubmit);
+    console.log(numberSubmit);
+    console.log(babiesSubmit);
+
+   console.log(babiesSubmit);
+    if (babiesSubmit!=="0"){
+        generateList(childrenSupplyList);
+    }
+
+    if (disabilitiesSubmit!=="no"){
+        generateList(disabilitiesSupplyList);
+    }
+    generateList(generalSupplyList);
+}else{
+    if ($("#option2").parent().attr("class").includes("active")){
+        generateList(zombieSupplyList);
+    }
+
+    if ($("#option3").parent().attr("class").includes("active")){
+        generateList(alienSupplyList);
+    }}
+    
+
+    //gathering which other lists to display based on state
+   
+   
+    // if (calledState.alienInvasion=true){
+    //     generateList(alienSupplyList);
+    // }
+    // if (calledState.zombieApocalypse=true){
+    //     generateList(zombieSupplyList);
+    // }
+
+})
+
+
+
+
+
 
 });
 
