@@ -639,13 +639,8 @@ var supplyList = document.createElement("ul");
 function generateList (anyList){
     
     for (var i=0; i<anyList.length; i++){
-<<<<<<< HEAD
-    var supplyItems=document.createElement("li");
-    supplyItems.innerHTML=anyList[i];
-=======
     var supplyItems=document.createElement("UL");
     supplyItems.innerHTML= anyList[i];
->>>>>>> master
     supplyItems.setAttribute("class", "list");
     supplyList.appendChild(supplyItems);
 
