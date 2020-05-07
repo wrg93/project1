@@ -712,22 +712,32 @@ function currentLocation () {
             $("#current-location").prepend(h6El)
 
 
-        $("#generate").click(function(){
+        $("#generate").on("click",function(){
             var disabilitiesSubmit = document.getElementById("exampleFormControlSelect3").value;
             var numberSubmit = document.getElementById("exampleFormControlSelect1").value;
             var babiesSubmit = document.getElementById("exampleFormControlSelect2").value;
             console.log(disabilitiesSubmit);
             console.log(numberSubmit);
             console.log(babiesSubmit);
-            generateList(generalSupplyList);
+           generateList(generalSupplyList);
 
-            if (babiesSubmit!==0){
+           console.log(babiesSubmit);
+            if (babiesSubmit!=="0"){
                 generateList(childrenSupplyList);
             }
 
-            if (disabilitiesSubmit="yes"){
+            if (disabilitiesSubmit!=="no"){
                 generateList(disabilitiesSupplyList);
             }
+
+            if ($("#option2").parent().attr("class").includes("active")){
+                generateList(zombieSupplyList);
+            }
+
+            if ($("#option3").parent().attr("class").includes("active")){
+                generateList(zombieSupplyList);
+            }
+            
 
             //gathering which other lists to display based on state
             var calledState=window[state1];
@@ -752,17 +762,17 @@ function currentLocation () {
                 console.log(city1 + ", "+state1 + " is prone to wildfires")
                 generateList(widlfireSupplyList);
             }
-            if (calledState.alienInvasion===true){
-                console.log(city1 + ", "+state1 + " is prone to alienInvasion")
-                generateList(alienSupplyList);
-            }
-            if (calledState.zombieApocalypse===true){
-                console.log(city1 + ", "+state1 + " is prone to zombieApocalypse")
-                generateList(zombieSupplyList);
-            }
-        })
+           
+            // if (calledState.alienInvasion=true){
+            //     generateList(alienSupplyList);
+            // }
+            // if (calledState.zombieApocalypse=true){
+            //     generateList(zombieSupplyList);
+            // }
+        
         })
     });
+    })
 }
 
 currentLocation();
