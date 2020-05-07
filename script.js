@@ -721,11 +721,12 @@ function currentLocation () {
             console.log(babiesSubmit);
            generateList(generalSupplyList);
 
-            if (babiesSubmit!==0){
+           console.log(babiesSubmit);
+            if (babiesSubmit!=="0"){
                 generateList(childrenSupplyList);
             }
 
-            if (disabilitiesSubmit="yes"){
+            if (disabilitiesSubmit!=="no"){
                 generateList(disabilitiesSupplyList);
             }
 
