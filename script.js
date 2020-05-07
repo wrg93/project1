@@ -639,8 +639,6 @@ var supplyList = document.createElement("ul");
 function generateList (anyList){
     
     for (var i=0; i<anyList.length; i++){
-    var supplyItems=document.createElement("li");
-    supplyItems.innerHTML=anyList[i];
     var supplyItems=document.createElement("UL");
     supplyItems.innerHTML= anyList[i];
     supplyItems.setAttribute("class", "list");
@@ -714,7 +712,7 @@ function currentLocation () {
             $("#current-location").prepend(h6El)
 
 
-        $(".btn").click(function(){
+        $("#generate").click(function(){
             var disabilitiesSubmit = document.getElementById("exampleFormControlSelect3").value;
             var numberSubmit = document.getElementById("exampleFormControlSelect1").value;
             var babiesSubmit = document.getElementById("exampleFormControlSelect2").value;

@@ -234,3 +234,49 @@ width: 80%;
   height:400px;
   
 }
+
+#current-location {
+
+  padding-top: 20px;
+}
+
+#new-location{
+width: 80%;
+margin-top:7px;
+
+}
+
+.btn-group-toggle{
+
+  margin-bottom: 20px;
+}
+
+.btn-secondary {
+  color: #fff;
+  background-color: salmon;
+  
+
+}
+
+.btn-secondary:not(:disabled):not(.disabled).active, .btn-secondary:not(:disabled):not(.disabled):active, .show>.btn-secondary.dropdown-toggle {
+  color: #fff;
+  background-color: #007bff;
+  border-color:  #007bff;
+}
+
+.btn-primary{
+margin-left: 50px;
+
+}
+
+label {
+
+font-weight: 600;
+color: lightskyblue;
+}
+
+.btn-outline-light {
+  color: lightskyblue;
+  font-weight: 600;
+  border-color: #f8f9fa;
+}
