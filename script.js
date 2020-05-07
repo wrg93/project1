@@ -785,7 +785,8 @@ function weather(city1){
     })
     .then(function(response){
         var icon = response.weather[0].icon;
-        var pEl = $("<p>Weather: " + response.main.temp +"°F; " + response.weather[0].description +  "</p>")
+        var pEl = $("<p id='weather-status'>Weather: " + response.main.temp +"°F; " + response.weather[0].description +  "</p>")
+        
         imageEl=$("<img>")
         imageEl.attr("src", "http://openweathermap.org/img/wn/" + icon + "@2x.png")
         imageEl.attr("class", "weather-icon")
