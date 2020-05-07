@@ -713,13 +713,31 @@ function currentLocation () {
 
 
         $("#generate").on("click",function(){
+            if ($("#option1").parent().attr("class").includes("active")){
+            var calledState=window[state1];
+            console.log(calledState);
+            if (calledState.earthquakes=true){
+                generateList(earthquakeSupplyList);
+            }
+            if (calledState.floods=true){
+                generateList(floodSupplyList);
+            }
+            if (calledState.hurricanes=true){
+                generateList(hurricaneSupplyList);
+            }
+            if (calledState.tornados=true){
+                generateList(tornadoSupplyList);
+            }
+            if (calledState.wildfires=true){
+                generateList(widlfireSupplyList);
+            }
+
             var disabilitiesSubmit = document.getElementById("exampleFormControlSelect3").value;
             var numberSubmit = document.getElementById("exampleFormControlSelect1").value;
             var babiesSubmit = document.getElementById("exampleFormControlSelect2").value;
             console.log(disabilitiesSubmit);
             console.log(numberSubmit);
             console.log(babiesSubmit);
-           generateList(generalSupplyList);
 
            console.log(babiesSubmit);
             if (babiesSubmit!=="0"){
@@ -729,39 +747,19 @@ function currentLocation () {
             if (disabilitiesSubmit!=="no"){
                 generateList(disabilitiesSupplyList);
             }
-
+            generateList(generalSupplyList);
+        }else{
             if ($("#option2").parent().attr("class").includes("active")){
                 generateList(zombieSupplyList);
             }
 
             if ($("#option3").parent().attr("class").includes("active")){
-                generateList(zombieSupplyList);
-            }
+                generateList(alienSupplyList);
+            }}
             
 
             //gathering which other lists to display based on state
-            var calledState=window[state1];
-            console.log(calledState);
-            if (calledState.earthquakes===true){
-                console.log(city1 + ", "+state1 + " is prone to earthquakes")
-                generateList(earthquakeSupplyList);
-            }
-            if (calledState.floods===true){
-                console.log(city1 + ", "+state1 + " is prone to floods")
-                generateList(floodSupplyList);
-            }
-            if (calledState.hurricanes===true){
-                console.log(city1 + ", "+state1 + " is prone to hurricanes")
-                generateList(hurricaneSupplyList);
-            }
-            if (calledState.tornados===true){
-                console.log(city1 + ", "+state1 + " is prone to tornados")
-                generateList(tornadoSupplyList);
-            }
-            if (calledState.wildfires===true){
-                console.log(city1 + ", "+state1 + " is prone to wildfires")
-                generateList(widlfireSupplyList);
-            }
+           
            
             // if (calledState.alienInvasion=true){
             //     generateList(alienSupplyList);
