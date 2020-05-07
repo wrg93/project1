@@ -517,32 +517,34 @@ var supplyList = document.createElement("ul");
     supplyList.style.listStyleType="none";
     listsDiv.appendChild(supplyList);
 
+    //On click event to add and display basket items from local storage
+    var basketArray = [];
+    $(".list").on("click", function(){
+        this.setAttribute("class","toBeRemoved");
+        basketArray.push(this.innerHTML);
+        localStorage.setItem("basket",JSON.stringify(basketArray));
+        renderBasket();
+    })
+    
+    //function that renders Basket Items
+    function renderBasket(){
+        basketItems = localStorage.getItem("basket");
+        if (basketItems === null){
+            return;
+        }
+        console.log(basketItems);
+        document.body.appendChild(basketItems);
+    }
+
 function generateList (anyList){
     
     for (var i=0; i<anyList.length; i++){
     var supplyItems=document.createElement("UL");
-    supplyItems.innerHTML= "<a onclick='localStorage.setItem(basketArray,this.innerHTML)'>" + anyList[i] + "</a>"
+    supplyItems.innerHTML= "<a onclick='localStorage.setItem(basketArray,this.textContent)'>" + anyList[i] + "</a>"
     supplyItems.setAttribute("class", "list");
     supplyList.appendChild(supplyItems);
 
-    //On click event to add and display basket items from local storage
-var basketArray = [];
-$(".list").on("click", function(){
-    this.setAttribute("class","toBeRemoved");
-    basketArray.push(this.innerHTML);
-    localStorage.setItem("basket",JSON.stringify(basketArray));
-    renderBasket();
-})
 
-//function that renders Basket Items
-function renderBasket(){
-    basketItems = localStorage.getItem("basket");
-    if (basketItems === null){
-        return;
-    }
-    console.log(basketItems);
-    document.body.appendChild(basketItems);
-}
 
     // supplyItems.innerHTML= "<a href= '#'>" + anyList[i] + "</a>"
    
