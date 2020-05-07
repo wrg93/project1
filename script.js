@@ -593,6 +593,7 @@ function currentLocation () {
             $("#current-location").prepend(h6El)
             
             
+            
             $("#generate").on("click",function(){
                 if ($("#option1").parent().attr("class").includes("active")){
                     var disabilitiesSubmit = document.getElementById("exampleFormControlSelect3").value;
@@ -710,16 +711,7 @@ function currentLocation () {
                         "Pay attention to air quality alerts.",
                     ]
                     
-                    var zombieSupplyList = [
-                        "cross-bow",
-                        "strong deodarant",
-                        "sturdy helmet",
-                    ]
                     
-                    var alienSupplyList = [
-                        "anti-abduction boots",
-                        "tin-foil hat",
-                    ]
                     
             var calledState=window[state1];
                 $("#disaster-prone").empty();
@@ -772,10 +764,19 @@ function currentLocation () {
             generateList(generalSupplyList);
         }else{
             if ($("#option2").parent().attr("class").includes("active")){
+                var zombieSupplyList = [
+                    "cross-bow",
+                    "strong deodarant",
+                    "sturdy helmet",
+                ]
                 generateList(zombieSupplyList);
             }
             
             if ($("#option3").parent().attr("class").includes("active")){
+                var alienSupplyList = [
+                    "anti-abduction boots",
+                    "tin-foil hat",
+                ]
                 generateList(alienSupplyList);
             }}
             
