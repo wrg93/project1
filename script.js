@@ -601,7 +601,7 @@ function currentLocation () {
                     var babiesSubmit = document.getElementById("exampleFormControlSelect2").value;
                     depNum=parseInt(numberSubmit) + 1;
                     babNum=parseInt(babiesSubmit);
-                    var generalSupplyList = document.createElement("UL");
+                    generalSupplyList = document.createElement("UL");
                     generalSupplyList.setAttribute("id", "generalSupplyList");
                     generalSupplyList.setAttribute("class","list");
                     generalSupplyList = [(depNum*3) + " Gallons of Water (one gallon per person per day for at least three days, for drinking and sanitation)", 
@@ -640,9 +640,9 @@ function currentLocation () {
                     
                     ];
                     
-                    var childrenSupplyList = ["Books", "games", "puzzles", "Infant formula", "bottles", (babNum*3) +" days supply of diapers", "wipes", "diaper rash cream"];
+                    childrenSupplyList = ["Books", "games", "puzzles", "Infant formula", "bottles", (babNum*3) +" days supply of diapers", "wipes", "diaper rash cream"];
                     
-                    var disabilitiesSupplyList = [
+                    disabilitiesSupplyList = [
                         "Be ready to explain to first responders that you need to evacuate and choose to go to a shelter with your family, service animal, caregiver, personal assistant and your assistive technology devices and supplies.",
                         "Plan ahead for accessible transportation that you may need for evacuation or getting to a medical clinic. Work with local services, public transportation or paratransit to identify your local or private accessible transportation options.",
                         "Inform your support network where you keep your emergency supplies. You may want to consider giving one member a key to your house or apartment.",
@@ -659,7 +659,7 @@ function currentLocation () {
                         "Plan for children with disabilities and people who may have difficulty in unfamiliar or chaotic environments.",
                     ]
                     
-                    var earthquakeSupplyList = [
+                    earthquakeSupplyList = [
                         "Practice Drop, Cover, and Hold On with family and coworkers",
                         "Secure heavy items in your home like bookcases, refrigerators, televisions and objects that hang on walls",
                         "Store heavy and breakable objects on low shelves",
@@ -669,7 +669,7 @@ function currentLocation () {
                     
                     ]
                     
-                    var floodSupplyList = [
+                    floodSupplyList = [
                         "Know types of flood risk in your area. Visit FEMA’s Flood Map Service Center for information",
                         "Sign up for your community’s warning system. The Emergency Alert System (EAS) and National Oceanic and Atmospheric Administration (NOAA) Weather Radio also provide emergency alerts",
                         "If flash flooding is a risk in your location monitor potential signs, such as heavy rain",
@@ -685,21 +685,21 @@ function currentLocation () {
                     
                     ]
                     
-                    var hurricaneSupplyList = [
+                    hurricaneSupplyList = [
                         "bring in outside furniture",
                         "You may have to evacuate quickly due to a hurricane. Learn your evacuation routes, practice with household, pets, and identify where you will stay",
                         "bring in outside furniture",
                         "consider hurricane shutters",
                     ]
                     
-                    var tornadoSupplyList = [
+                    tornadoSupplyList = [
                         "Know the signs of a tornado, including a rotating, funnel-shaped cloud; an approaching cloud of debris; or a loud roar—similar to a freight train",
                     "Sign up for your community’s warning system. The Emergency Alert System (EAS) and National Oceanic and Atmospheric Administration (NOAA) Weather Radio also provide emergency alerts. If your community has sirens, then become familiar with the warning tone.",
                     "Pay attention to weather reports. Meteorologists can predict when conditions might be right for a tornado",
                     "Identify and practice going to a safe shelter, while following the latest social and physical-distancing and other health safety guidelines from the Centers for Disease Control and Prevention and your local health authorities, in the event of high winds, such as a safe room built using FEMA criteria or a storm shelter built to ICC 500 standards. The next best protection is a small, interior, windowless room on the lowest level of a sturdy building.",
                     ]
                     
-                    var widlfireSupplyList = [
+                    widlfireSupplyList = [
                         "Know your community’s evacuation plans and find several ways to leave the area. Drive the evacuation routes and find shelter locations. Have a plan for pets and livestock.",
                         "N95 mask",
                         "Designate a room that can be closed off from outside air. Close all doors and windows. Set up a portable air cleaner to keep indoor pollution levels low when smoky conditions exist.",
@@ -729,21 +729,21 @@ function currentLocation () {
                 console.log("true")
                 h5El= $("<h5>")
                 h5El.text("Floods")
-                $("#lists").append(h5El)
+                $("#disaster-prone").append(h5El)
                 generateList(floodSupplyList);
             }
             if (calledState.hurricanes==true){
                 console.log("true")
                 h5El= $("<h5>")
                 h5El.text("Hurricanes")
-                $("#lists").append(h5El)
+                $("#disaster-prone").append(h5El)
                 generateList(hurricaneSupplyList);
             }
             if (calledState.tornados==true){
                 console.log("true")
                 h5El= $("<h5>")
                 h5El.text("Tornados")
-                $("#lists").append(h5El)
+                $("#disaster-prone").append(h5El)
                 generateList(tornadoSupplyList);
             }
             if (calledState.wildfires==true){
@@ -769,6 +769,9 @@ function currentLocation () {
                     "strong deodarant",
                     "sturdy helmet",
                 ]
+                h5El= $("<h5>")
+                h5El.text("Zombies")
+                $("#disaster-prone").append(h5El)
                 generateList(zombieSupplyList);
             }
             
@@ -777,6 +780,9 @@ function currentLocation () {
                     "anti-abduction boots",
                     "tin-foil hat",
                 ]
+                h5El= $("<h5>")
+                h5El.text("Aliens")
+                $("#disaster-prone").append(h5El)
                 generateList(alienSupplyList);
             }}
             
@@ -794,9 +800,14 @@ currentLocation();
 
 
 
-
-
-
+var disabilitiesSupplyList;
+var childrenSupplyList;
+var generalSupplyList;
+var widlfireSupplyList;
+var tornadoSupplyList;
+var hurricaneSupplyList;
+var earthquakeSupplyList;
+var floodSupplyList;
 
 
 
@@ -805,9 +816,12 @@ $("#new-location").on("click", function(){
     event.preventDefault();
     var city1 = $("input").val();
     var state1 = $("select").val();
-    // weather(city1);
+    weather(city1);
     $(".map-image").attr("src", "https://maps.googleapis.com/maps/api/staticmap?center="+ city1 + "," + state1 + "&zoom=13&size=950x950&key=AIzaSyCfzql8n3orawbtaEJs17tPctto036AFeg")
    $(".city-name").text("You are in " + city1 + ", " +state1)
+
+
+
 
 
    $("#generate").on("click",function(){
@@ -869,13 +883,30 @@ $("#new-location").on("click", function(){
     generateList(generalSupplyList);
 }else{
     if ($("#option2").parent().attr("class").includes("active")){
+        var zombieSupplyList = [
+            "cross-bow",
+            "strong deodarant",
+            "sturdy helmet",
+        ]
+        h5El= $("<h5>")
+                h5El.text("Zombies")
+                $("#disaster-prone").append(h5El)
+                generateList(zombieSupplyList);
         generateList(zombieSupplyList);
     }
-
+    
     if ($("#option3").parent().attr("class").includes("active")){
+        var alienSupplyList = [
+            "anti-abduction boots",
+            "tin-foil hat",
+        ]
+        h5El= $("<h5>")
+                h5El.text("Aliens")
+                $("#disaster-prone").append(h5El)
+                generateList(zombieSupplyList);
         generateList(alienSupplyList);
     }}
-    
+
 
     //gathering which other lists to display based on state
    
@@ -894,6 +925,7 @@ $("#new-location").on("click", function(){
 
 // function to get weather
 function weather(city1){
+    $("#weather-display").empty();
     var apiKey = "bb06c0b8789f5256fcbbe492b33425e3";
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city1 + "&appid=" + apiKey + "&units=imperial";
     
@@ -911,8 +943,8 @@ function weather(city1){
         imageEl=$("<img>")
         imageEl.attr("src", "http://openweathermap.org/img/wn/" + icon + "@2x.png")
         imageEl.attr("class", "weather-icon")
-        $("#current-location").append(pEl)
-        $("#current-location").append(imageEl)
+        $("#weather-display").append(pEl)
+        $("#weather-display").append(imageEl)
     });
     }
 
