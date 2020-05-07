@@ -712,14 +712,14 @@ function currentLocation () {
             $("#current-location").prepend(h6El)
 
 
-        $("#generate").click(function(){
+        $("#generate").on("click",function(){
             var disabilitiesSubmit = document.getElementById("exampleFormControlSelect3").value;
             var numberSubmit = document.getElementById("exampleFormControlSelect1").value;
             var babiesSubmit = document.getElementById("exampleFormControlSelect2").value;
             console.log(disabilitiesSubmit);
             console.log(numberSubmit);
             console.log(babiesSubmit);
-            generateList(generalSupplyList);
+           generateList(generalSupplyList);
 
             if (babiesSubmit!==0){
                 generateList(childrenSupplyList);
@@ -728,6 +728,15 @@ function currentLocation () {
             if (disabilitiesSubmit="yes"){
                 generateList(disabilitiesSupplyList);
             }
+
+            if ($("#option2").parent().attr("class").includes("active")){
+                generateList(zombieSupplyList);
+            }
+
+            if ($("#option3").parent().attr("class").includes("active")){
+                generateList(zombieSupplyList);
+            }
+            
 
             //gathering which other lists to display based on state
             var calledState=window[state1];
@@ -747,15 +756,17 @@ function currentLocation () {
             if (calledState.wildfires=true){
                 generateList(widlfireSupplyList);
             }
-            if (calledState.alienInvasion=true){
-                generateList(alienSupplyList);
-            }
-            if (calledState.zombieApocalypse=true){
-                generateList(zombieSupplyList);
-            }
-        })
+           
+            // if (calledState.alienInvasion=true){
+            //     generateList(alienSupplyList);
+            // }
+            // if (calledState.zombieApocalypse=true){
+            //     generateList(zombieSupplyList);
+            // }
+        
         })
     });
+    })
 }
 
 currentLocation();
