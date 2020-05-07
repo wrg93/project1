@@ -713,33 +713,7 @@ function currentLocation () {
 
 
         $("#generate").on("click",function(){
-            var disabilitiesSubmit = document.getElementById("exampleFormControlSelect3").value;
-            var numberSubmit = document.getElementById("exampleFormControlSelect1").value;
-            var babiesSubmit = document.getElementById("exampleFormControlSelect2").value;
-            console.log(disabilitiesSubmit);
-            console.log(numberSubmit);
-            console.log(babiesSubmit);
-           generateList(generalSupplyList);
-
-           console.log(babiesSubmit);
-            if (babiesSubmit!=="0"){
-                generateList(childrenSupplyList);
-            }
-
-            if (disabilitiesSubmit!=="no"){
-                generateList(disabilitiesSupplyList);
-            }
-
-            if ($("#option2").parent().attr("class").includes("active")){
-                generateList(zombieSupplyList);
-            }
-
-            if ($("#option3").parent().attr("class").includes("active")){
-                generateList(zombieSupplyList);
-            }
-            
-
-            //gathering which other lists to display based on state
+            if ($("#option1").parent().attr("class").includes("active")){
             var calledState=window[state1];
             console.log(calledState);
             if (calledState.earthquakes=true){
@@ -757,6 +731,35 @@ function currentLocation () {
             if (calledState.wildfires=true){
                 generateList(widlfireSupplyList);
             }
+
+            var disabilitiesSubmit = document.getElementById("exampleFormControlSelect3").value;
+            var numberSubmit = document.getElementById("exampleFormControlSelect1").value;
+            var babiesSubmit = document.getElementById("exampleFormControlSelect2").value;
+            console.log(disabilitiesSubmit);
+            console.log(numberSubmit);
+            console.log(babiesSubmit);
+
+           console.log(babiesSubmit);
+            if (babiesSubmit!=="0"){
+                generateList(childrenSupplyList);
+            }
+
+            if (disabilitiesSubmit!=="no"){
+                generateList(disabilitiesSupplyList);
+            }
+            generateList(generalSupplyList);
+        }else{
+            if ($("#option2").parent().attr("class").includes("active")){
+                generateList(zombieSupplyList);
+            }
+
+            if ($("#option3").parent().attr("class").includes("active")){
+                generateList(alienSupplyList);
+            }}
+            
+
+            //gathering which other lists to display based on state
+           
            
             // if (calledState.alienInvasion=true){
             //     generateList(alienSupplyList);
