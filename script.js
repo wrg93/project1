@@ -518,7 +518,7 @@ var supplyList = document.createElement("ul");
     listsDiv.appendChild(supplyList);
 
 function generateList (anyList){
-    
+    supplyList.innerHTML="";
     for (var i=0; i<anyList.length; i++){
     var supplyItems=document.createElement("UL");
     supplyItems.innerHTML= anyList[i];
