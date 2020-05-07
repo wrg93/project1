@@ -518,7 +518,7 @@ var supplyList = document.createElement("ul");
     listsDiv.appendChild(supplyList);
 
 function generateList (anyList){
-    supplyList.innerHTML="";
+    
     for (var i=0; i<anyList.length; i++){
     var supplyItems=document.createElement("UL");
     supplyItems.innerHTML= anyList[i];
@@ -595,6 +595,11 @@ function currentLocation () {
             
             
             $("#generate").on("click",function(){
+                supplyList.innerHTML="";
+                $("#disaster-prone").empty();
+                h4El= $("<h4>")
+                h4El.text(city1+", "+state1 + " is prone to: ")
+                $("#disaster-prone").append(h4El)
                 if ($("#option1").parent().attr("class").includes("active")){
                     var disabilitiesSubmit = document.getElementById("exampleFormControlSelect3").value;
                     var numberSubmit = document.getElementById("exampleFormControlSelect1").value;
@@ -714,15 +719,12 @@ function currentLocation () {
                     
                     
             var calledState=window[state1];
-                $("#disaster-prone").empty();
-                h4El= $("<h4>")
-                h4El.text(city1+", "+state1 + " is prone to: ")
-                $("#disaster-prone").append(h4El)
             if (calledState.earthquakes==true){
                 console.log("true")
                 h5El= $("<h5>")
                 h5El.text("Earthquakes")
                 $("#disaster-prone").append(h5El)
+                console.log("generatle")
                 generateList(earthquakeSupplyList);
             }
             if (calledState.floods==true){
@@ -761,7 +763,7 @@ function currentLocation () {
             if (disabilitiesSubmit!=="no"){
                 generateList(disabilitiesSupplyList);
             }
-            generateList(generalSupplyList);
+           
         }else{
             if ($("#option2").parent().attr("class").includes("active")){
                 var zombieSupplyList = [
@@ -825,6 +827,7 @@ $("#new-location").on("click", function(){
 
 
    $("#generate").on("click",function(){
+    supplyList.innerHTML="";
     $("#disaster-prone").empty();
             h4El= $("<h4>")
             h4El.text(city1+", "+state1 + " is prone to: ")
@@ -880,7 +883,7 @@ $("#new-location").on("click", function(){
     if (disabilitiesSubmit!=="no"){
         generateList(disabilitiesSupplyList);
     }
-    generateList(generalSupplyList);
+  
 }else{
     if ($("#option2").parent().attr("class").includes("active")){
         var zombieSupplyList = [
@@ -892,7 +895,7 @@ $("#new-location").on("click", function(){
                 h5El.text("Zombies")
                 $("#disaster-prone").append(h5El)
                 generateList(zombieSupplyList);
-        generateList(zombieSupplyList);
+        
     }
     
     if ($("#option3").parent().attr("class").includes("active")){
@@ -903,8 +906,8 @@ $("#new-location").on("click", function(){
         h5El= $("<h5>")
                 h5El.text("Aliens")
                 $("#disaster-prone").append(h5El)
-                generateList(zombieSupplyList);
-        generateList(alienSupplyList);
+              
+            generateList(alienSupplyList);
     }}
 
 
