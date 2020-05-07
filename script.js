@@ -732,25 +732,32 @@ function currentLocation () {
             //gathering which other lists to display based on state
             var calledState=window[state1];
             console.log(calledState);
-            if (calledState.earthquakes=true){
+            if (calledState.earthquakes===true){
+                console.log(city1 + ", "+state1 + " is prone to earthquakes")
                 generateList(earthquakeSupplyList);
             }
-            if (calledState.floods=true){
+            if (calledState.floods===true){
+                console.log(city1 + ", "+state1 + " is prone to floods")
                 generateList(floodSupplyList);
             }
-            if (calledState.hurricanes=true){
+            if (calledState.hurricanes===true){
+                console.log(city1 + ", "+state1 + " is prone to hurricanes")
                 generateList(hurricaneSupplyList);
             }
-            if (calledState.tornados=true){
+            if (calledState.tornados===true){
+                console.log(city1 + ", "+state1 + " is prone to tornados")
                 generateList(tornadoSupplyList);
             }
-            if (calledState.wildfires=true){
+            if (calledState.wildfires===true){
+                console.log(city1 + ", "+state1 + " is prone to wildfires")
                 generateList(widlfireSupplyList);
             }
-            if (calledState.alienInvasion=true){
+            if (calledState.alienInvasion===true){
+                console.log(city1 + ", "+state1 + " is prone to alienInvasion")
                 generateList(alienSupplyList);
             }
-            if (calledState.zombieApocalypse=true){
+            if (calledState.zombieApocalypse===true){
+                console.log(city1 + ", "+state1 + " is prone to zombieApocalypse")
                 generateList(zombieSupplyList);
             }
         })
