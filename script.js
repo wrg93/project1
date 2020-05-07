@@ -521,27 +521,11 @@ function generateList (anyList){
     
     for (var i=0; i<anyList.length; i++){
     var supplyItems=document.createElement("UL");
-    supplyItems.innerHTML= anyList[i];
+    supplyItems.innerHTML= "<a onclick='localStorage.setItem(basketArray,this.innerHTML)'>" + anyList[i] + "</a>"
     supplyItems.setAttribute("class", "list");
     supplyList.appendChild(supplyItems);
 
-    var supplySpan=document.createElement("span");
-    supplySpan.setAttribute("class", "fa-li");
-    supplyItems.appendChild(supplySpan);
-
-    var supplyIcon = document.createElement("i");
-    supplyIcon.setAttribute("class", "fas fa-check-square");
-    supplySpan.appendChild(supplyIcon);
-
-    
-    }
-}
-
-
-
-
-
-//On click event to add and display basket items from local storage
+    //On click event to add and display basket items from local storage
 var basketArray = [];
 $(".list").on("click", function(){
     this.setAttribute("class","toBeRemoved");
@@ -559,6 +543,31 @@ function renderBasket(){
     console.log(basketItems);
     document.body.appendChild(basketItems);
 }
+
+    // supplyItems.innerHTML= "<a href= '#'>" + anyList[i] + "</a>"
+   
+    // var supplyTag=document.createElement("a")
+    // supplyTag.setAttribute("class","supplyTag")
+    // supplyTag.href="#";
+    // supplyItems.appendChild(supplyTag);
+
+    // var supplySpan=document.createElement("span");
+    // supplySpan.setAttribute("class", "fa-li");
+    // supplyItems.appendChild(supplySpan);
+
+    // var supplyIcon = document.createElement("i");
+    // supplyIcon.setAttribute("class", "fas fa-check-square");
+    // supplySpan.appendChild(supplyIcon);
+
+    
+    }
+}
+
+
+
+
+
+
 
 var state1="";
 function currentLocation () {
