@@ -25,7 +25,7 @@
 
         <!-- collumn left -->
 
-        <div class="col-md-2">
+        <div class="col-md-3" id="location-selector">
           <p id="change-location">Change Your Location</p>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
@@ -101,12 +101,12 @@
 
         <!-- collumn middle -->
 
-        <div class="col-md-8">
-          <header><h1>Get Prepared</h1></header>
+        <div class="col-md-6">
+          <header>Get Prepared</header>
         </div>
 
         <!-- collumn right -->
-        <div class="col-md-2" id="doomsday">
+        <div class="col-md-3" id="doomsday">
           <img id="doomsday" width=100px src="https://wp-media.patheos.com/blogs/sites/347/2019/01/DoomsdayClock2.png" alt=doomsday clock></img>
             <p>Doomsday Clock is 3 minutes to midnight</p>
         </div>
@@ -118,16 +118,17 @@
 
       <!-- collum left -->
         <div id="current-location" class="col-md-3">
+          <div id="weather-display"></div>
         </div>
 
         <!-- collum middle -->
         <div class="col-md-6" id="disaster-list">
-          <p>placeholder for list of recent disasters functionality</p>
+          
         </div>
 
         <!-- collumn right -->
-        <div class="col-md-3">
-          <a class="twitter-timeline" data-width="300" data-height="400" href="https://twitter.com/fema?ref_src=twsrc%5Etfw">Tweets by fema</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+        <div class="col-md-3" id="twitter">
+          <a class="twitter-timeline" data-width="300" data-height="400" data-theme="light" href="https://twitter.com/DisastersChart?ref_src=twsrc%5Etfw">Tweets by DisastersChart</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
            </div>
     </div>
 
@@ -165,6 +166,7 @@
                   </select>
                 </div>
               </form>
+              <div class="choosing-buttons">
               <div class="btn-group btn-group-toggle" data-toggle="buttons">
                 <label class="btn btn-secondary active">
                   <input type="radio" name="options" id="option1" checked> Serious
@@ -178,6 +180,7 @@
               </div>
               <button class="btn btn-primary" id="generate" type="button">Generate My List</button>
             </div>
+            </div>
 
             <!-- collum middle -->
             
@@ -187,9 +190,11 @@
 
             <!-- collum right -->
         <div class="col-md-3" id="shopping-cart">
-          <i class="fas fa-cart-arrow-down fa-5x"></i>
-        <p>placeholder for shopping functionality</p>
+          <i class="fas fa-shopping-basket fa-5x"></i>
+        </br>
+          <button class="btn btn-primary" id="shopping" type="button">Add Items to Basket</button>
           </div>
+          
 
   </div>
 

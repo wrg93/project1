@@ -62,7 +62,11 @@ var AL = {
     tornados: false,
     wildfires: true,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: false,
+    midwesternState: false,
+    southernState: true
 };
     
 var AK= {
@@ -72,7 +76,11 @@ var AK= {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: true,
+    northeasternState: false,
+    midwesternState: false,
+    southernState: false
 };
 
 var AZ= {
@@ -82,7 +90,11 @@ var AZ= {
     tornados: false,
     wildfires: true,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: true,
+    northeasternState: false,
+    midwesternState: false,
+    southernState: false
 };
 
 var AR= {
@@ -92,7 +104,11 @@ var AR= {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: true,
+    northeasternState: false,
+    midwesternState: false,
+    southernState: false
 };
 
 var CA= {
@@ -102,7 +118,11 @@ var CA= {
     tornados: false,
     wildfires: true,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: true,
+    northeasternState: false,
+    midwesternState: false,
+    southernState: false
 };
 
 var CO= {
@@ -112,7 +132,11 @@ var CO= {
     tornados: true,
     wildfires: true,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: true,
+    northeasternState: false,
+    midwesternState: false,
+    southernState: false
 };
 
 var CT= {
@@ -122,7 +146,11 @@ var CT= {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: true,
+    midwesternState: false,
+    southernState: false
 };
 
 var DE= {
@@ -132,7 +160,11 @@ var DE= {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: true,
+    midwesternState: false,
+    southernState: false
 };
 
 var FL= {
@@ -142,7 +174,11 @@ var FL= {
     tornados: false,
     wildfires: true,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: false,
+    midwesternState: false,
+    southernState: true
 };
 
 var GA= {
@@ -152,7 +188,11 @@ var GA= {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: false,
+    midwesternState: false,
+    southernState: true
 };
 
 var HI= {
@@ -162,7 +202,11 @@ var HI= {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: true,
+    northeasternState: false,
+    midwesternState: false,
+    southernState: false
 };
 
 var ID= {
@@ -172,7 +216,11 @@ var ID= {
     tornados: false,
     wildfires: true,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: true,
+    northeasternState: false,
+    midwesternState: false,
+    southernState: false
 };
 
 var IL= {
@@ -182,7 +230,12 @@ var IL= {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: false,
+    midwesternState: true,
+    southernState: false
+
 };
 
 var IN= {
@@ -192,7 +245,11 @@ var IN= {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: false,
+    midwesternState: true,
+    southernState: false
 };
 
 var IA= {
@@ -202,7 +259,11 @@ var IA= {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: false,
+    midwesternState: true,
+    southernState: false
 };
 
 var KS= {
@@ -212,7 +273,11 @@ var KS= {
     tornados: true,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: false,
+    midwesternState: true,
+    southernState: false
 };
 
 var KY= {
@@ -222,7 +287,11 @@ var KY= {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: false,
+    midwesternState: false,
+    southernState: true
 };
 
 var LA = {
@@ -232,7 +301,11 @@ var LA = {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: false,
+    midwesternState: false,
+    southernState: true
 };
 
 var ME= {
@@ -242,7 +315,11 @@ var ME= {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: true,
+    midwesternState: false,
+    southernState: false
 };
 
 var MD= {
@@ -252,7 +329,11 @@ var MD= {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: true,
+    midwesternState: false,
+    southernState: false
 };
 
 var MA= {
@@ -262,7 +343,11 @@ var MA= {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: true,
+    midwesternState: false,
+    southernState: false
 };
 
 var MI= {
@@ -272,7 +357,11 @@ var MI= {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: false,
+    midwesternState: true,
+    southernState: false
 };
 
 var MN= {
@@ -282,7 +371,11 @@ var MN= {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: false,
+    midwesternState: true,
+    southernState: false
 };
 
 var MS= {
@@ -292,7 +385,11 @@ var MS= {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: false,
+    midwesternState: false,
+    southernState: true
 };
 
 var MO= {
@@ -302,7 +399,11 @@ var MO= {
     tornados: false,
     wildfires: true,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: true,
+    northeasternState: false,
+    midwesternState: false,
+    southernState: false
 };
 
 var MT= {
@@ -312,7 +413,11 @@ var MT= {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: true,
+    northeasternState: false,
+    midwesternState: false,
+    southernState: false
 };
 
 var NE= {
@@ -322,7 +427,11 @@ var NE= {
     tornados: true,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: false,
+    midwesternState: true,
+    southernState: false
 };
 
 var NV= {
@@ -332,7 +441,11 @@ var NV= {
     tornados: false,
     wildfires: true, 
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: true,
+    northeasternState: false,
+    midwesternState: false,
+    southernState: false
 };
 
 var NH= {
@@ -342,7 +455,11 @@ var NH= {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: true,
+    midwesternState: false,
+    southernState: false
 };
 
 var NJ = {
@@ -352,7 +469,11 @@ var NJ = {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: true,
+    midwesternState: false,
+    southernState: false
 };
 
 var NM = {
@@ -362,7 +483,11 @@ var NM = {
     tornados: false,
     wildfires: true, 
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: true,
+    northeasternState: false,
+    midwesternState: false,
+    southernState: false
 };
 
 var NY= {
@@ -372,7 +497,11 @@ var NY= {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: true,
+    midwesternState: false,
+    southernState: false
 };
 
 var NC= {
@@ -382,7 +511,11 @@ var NC= {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: false,
+    midwesternState: false,
+    southernState: true
 };
 
 var ND= {
@@ -392,7 +525,11 @@ var ND= {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: false,
+    midwesternState: true,
+    southernState: false
 };
 
 var OH= {
@@ -402,7 +539,11 @@ var OH= {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: false,
+    midwesternState: true,
+    southernState: false
 };
 
 var OK= {
@@ -412,7 +553,11 @@ var OK= {
     tornados: true,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: false,
+    midwesternState: false,
+    southernState: true
 };
 
 var OR= {
@@ -422,7 +567,11 @@ var OR= {
     tornados: false,
     wildfires: true,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: true,
+    northeasternState: false,
+    midwesternState: false,
+    southernState: false
 };
 
 var PA= {
@@ -432,7 +581,11 @@ var PA= {
     tornados: false, 
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: true,
+    midwesternState: false,
+    southernState: false
 }; 
 
 var RI= {
@@ -442,7 +595,11 @@ var RI= {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: true,
+    midwesternState: false,
+    southernState: false
 };
 
 var SC = {
@@ -452,7 +609,11 @@ var SC = {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: false,
+    midwesternState: false,
+    southernState: true
 };
 
 var SD = {
@@ -462,7 +623,11 @@ var SD = {
     tornados: true,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: false,
+    midwesternState: true,
+    southernState: false
 };
 
 var TN = {
@@ -472,7 +637,11 @@ var TN = {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: false,
+    midwesternState: false,
+    southernState: true
 };
 
 var TX= {
@@ -482,7 +651,11 @@ var TX= {
     tornados: true,
     wildfires: true,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: false,
+    midwesternState: false,
+    southernState: true
 };
 
 var UT = {
@@ -492,7 +665,11 @@ var UT = {
     tornados: false,
     wildfires: true, 
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: true,
+    northeasternState: false,
+    midwesternState: false,
+    southernState: false
 };
 
 var VT= {
@@ -502,7 +679,11 @@ var VT= {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: true,
+    midwesternState: false,
+    southernState: false
 };
 
 var VA = {
@@ -512,7 +693,11 @@ var VA = {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: false,
+    midwesternState: false,
+    southernState: true
 };
 
 var WA = {
@@ -522,7 +707,11 @@ var WA = {
     tornados: false,
     wildfires: true,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: true,
+    northeasternState: false,
+    midwesternState: false,
+    southernState: false
 };
 
 var WV = {
@@ -532,7 +721,11 @@ var WV = {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: true,
+    northeasternState: false,
+    midwesternState: false,
+    southernState: false
 };
 
 var WI = {
@@ -542,7 +735,11 @@ var WI = {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: false,
+    northeasternState: false,
+    midwesternState: true,
+    southernState: false
 };
 
 var WY= {
@@ -552,11 +749,28 @@ var WY= {
     tornados: false,
     wildfires: true, 
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    westernState: true,
+    northeasternState: false,
+    midwesternState: false,
+    southernState: false
 };
 
+var southText = "Hurricane katrina: 2005, 1836 deaths, $125billion in damages Hurricane Maria: 2017, 2982 deaths,\n $90bilion in damage 1980 heatwave: 1980, 1700 deaths, $20billion in damages 1928 Okeechobee hurricane: 1928, 2823 deaths, $800million in damages Hurricane Audrey: 1957, 416 deaths, $147million in damages"
+var southElement = document.createElement("p");
+southElement.innerHTML=southText;
 
+var midwestText = "1993, Great Flood of 1993, 50 dead, 37.3 billion damages 2012-13, North American Drought , 123 dead, 33.6 billion 1871, Peshitgo Forrest Fire, 1200 dead,  $170 million damages 2011, Super Outbreak, 324 dead, $3.2 billion damages"
+midwestElement = document.createElement("p");
+midwestElement.innerHTML=midwestText;
 
+var northeastText = "1889,  Johnstown Flood, 2208 dead, $497 million damages 1888, Great White Hurricane, 400+ dead, $710 million damages 1938, Great New England Hurricane, 682 dead, $4.7 billion damages 1927, Vermont Flood, 84+ dead, $5.5 billion"
+northeastElement = document.createElement("p");
+northeastElement.innerHTML=northeastText;
+
+var westText = "1906 san Francisco earthquake: 1906,3000+ deaths, 7.9mg Paradise California wildfire: 2018, 85 deaths, deadliest fire in California history Los Angeles flood: 1938, 115 deaths, deadliest disaster in LA history.\n Northridge earthquake: 1994, 60 deaths, 6.9 mg"
+westElement = document.createElement("p");
+westElement.innerHTML=westText;
 
 //variables to plug in dependents number
 var depNum = 0;
@@ -568,53 +782,82 @@ var babNum=0;
 //function which takes items from any any list given and appends them to list
 
 var listsDiv=document.getElementById("lists");
-
+var basketArray=[];
 var supplyList = document.createElement("ul");
     supplyList.style.listStyleType="none";
     listsDiv.appendChild(supplyList);
-
-function generateList (anyList){
+    localStorage.setItem("basket", "");
     
+function generateList (anyList){
+    supplyList.innerHTML="";
     for (var i=0; i<anyList.length; i++){
     var supplyItems=document.createElement("UL");
-    supplyItems.innerHTML= anyList[i];
-    supplyItems.setAttribute("class", "list");
+    supplyItems.innerHTML= anyList[i]
+
+    $(supplyItems).on("click", function(){
+        basketArray.push(this.innerHTML);
+        localStorage.setItem("basket",JSON.stringify(basketArray));
+
+    })
     supplyList.appendChild(supplyItems);
 
-    var supplySpan=document.createElement("span");
-    supplySpan.setAttribute("class", "fa-li");
-    supplyItems.appendChild(supplySpan);
+ 
 
-    var supplyIcon = document.createElement("i");
-    supplyIcon.setAttribute("class", "fas fa-check-square");
-    supplySpan.appendChild(supplyIcon);
+//function that renders Basket Items
+
+    
+    // if (basketItems === null){
+    //     return;
+        
+    // }
+
+
+
+   //On click event to add and display basket items from local storage
+// var basketArray = [];
+// $("#shopping-list").on("click", function(){
+//     this.setAttribute("class","toBeRemoved");
+//     basketArray.push(this.innerHTML);
+//     localStorage.setItem("basket",JSON.stringify(basketArray));
+//     renderBasket();
+// })
+
+
+    // supplyItems.innerHTML= "<a href= '#'>" + anyList[i] + "</a>"
+   
+    // var supplyTag=document.createElement("a")
+    // supplyTag.setAttribute("class","supplyTag")
+    // supplyTag.href="#";
+    // supplyItems.appendChild(supplyTag);
+
+    // var supplySpan=document.createElement("span");
+    // supplySpan.setAttribute("class", "fa-li");
+    // supplyItems.appendChild(supplySpan);
+
+    // var supplyIcon = document.createElement("i");
+    // supplyIcon.setAttribute("class", "fas fa-check-square");
+    // supplySpan.appendChild(supplyIcon);
 
     
     }
 }
-
-
-
-
-
-//On click event to add and display basket items from local storage
-var basketArray = [];
-$(".list").on("click", function(){
-    this.setAttribute("class","toBeRemoved");
-    basketArray.push(this.innerHTML);
-    localStorage.setItem("basket",JSON.stringify(basketArray));
-    renderBasket();
+basketList = document.createElement("UL");
+//displays items in shopping cart if shopping car is clixked
+$("#shopping").on("click", function(){
+   
+    basketList.innerHTML="";
+    var basket  = JSON.parse(localStorage.getItem("basket"))
+   
+    $("#shopping-cart").append(basketList);
+    for (var i=0; i<basket.length; i++){
+    var basketItems = document.createElement("LI");
+    basketItems.innerHTML= "<a href= 'https://www.google.com/search?psb=1&tbm=shop&q=" + basket[i] + "&ved=0CAQQr4sDKAJqFwoTCIqX98S0o-kCFRPpYgodgbgOqxAC'>" + basket[i] + "</a>"
+    basketList.appendChild(basketItems);
+}
 })
 
-//function that renders Basket Items
-function renderBasket(){
-    basketItems = localStorage.getItem("basket");
-    if (basketItems === null){
-        return;
-    }
-    console.log(basketItems);
-    document.body.appendChild(basketItems);
-}
+
+
 
 var state1="";
 function currentLocation () {
@@ -647,10 +890,27 @@ function currentLocation () {
             h6El.text("You are in " + city1 + ", " +state1)
             weather(city1);
             $("#current-location").prepend(h6El)
+            if (window[state1].southernState==true){
+                $("#disaster-list").html(southElement);
+            }
+            if (window[state1].northeasternState==true){
+                $("#disaster-list").html(northeastElement);
+            }
+            if (window[state1].westernState==true){
+                $("#disaster-list").html(westElement);
+            }
+            if (window[state1].midwesternState==true){
+                $("#disaster-list").html(midwestElement);
+            }
             
             
             
             $("#generate").on("click",function(){
+                supplyList.innerHTML="";
+                $("#disaster-prone").empty();
+                h4El= $("<h4>")
+                h4El.text(city1+", "+state1 + " is at threat from: ")
+                $("#disaster-prone").append(h4El)
                 if ($("#option1").parent().attr("class").includes("active")){
                     // selectValue is used to grab the form select drop down's value
                     var selectValue = $(".form-control option:selected").val();
@@ -659,7 +919,7 @@ function currentLocation () {
                     var babiesSubmit = document.getElementById("exampleFormControlSelect2").value;
                     depNum=parseInt(numberSubmit) + 1;
                     babNum=parseInt(babiesSubmit);
-                    var generalSupplyList = document.createElement("UL");
+                    generalSupplyList = document.createElement("UL");
                     generalSupplyList.setAttribute("id", "generalSupplyList");
                     generalSupplyList.setAttribute("class","list");
                     generalSupplyList = [(depNum*3) + "Water: one gallon per day per person", 
@@ -696,6 +956,7 @@ function currentLocation () {
                     "Paper and pencil"  
                     ];
                     
+<<<<<<< HEAD
                     var childrenSupplyList = [
                         "Entertainment: books, games, puzzles, etc", 
                         "Infant formula", 
@@ -743,6 +1004,69 @@ function currentLocation () {
                     ]
                     
                     var widlfireSupplyList = [
+=======
+                    childrenSupplyList = ["Books", "games", "puzzles", "Infant formula", "bottles", (babNum*3) +" days supply of diapers", "wipes", "diaper rash cream"];
+                    
+                    disabilitiesSupplyList = [
+                        "Be ready to explain to first responders that you need to evacuate and choose to go to a shelter with your family, service animal, caregiver, personal assistant and your assistive technology devices and supplies.",
+                        "Plan ahead for accessible transportation that you may need for evacuation or getting to a medical clinic. Work with local services, public transportation or paratransit to identify your local or private accessible transportation options.",
+                        "Inform your support network where you keep your emergency supplies. You may want to consider giving one member a key to your house or apartment.",
+                        "Contact your city or county government’s emergency management agency or office. Many local offices keep lists of people with disabilities so they can be helped quickly in a sudden emergency.",
+                        "If you are dependent on dialysis or other life-sustaining treatment know the location and availability of more than one facility.",
+                        "If you use medical equipment in your home that requires electricity, talk to your doctor or health care provider about how you can prepare for its use during a power outage.",
+                        "Wear medical alert tags or bracelets.",
+                        "If you have a communication disability make sure your emergency information says the best way to communicate with you.",
+                        "If you use an augmentative communications device or other assistive technologies, plan how you will evacuate with the devices or how you will replace equipment if lost or destroyed. Keep model numbers and note where the equipment came from (Medicaid, Medicare, private insurance, etc.).",
+                        "Plan how you will communicate with others if your equipment is not working, including laminated cards with phrases, pictures or pictograms.",
+                        "Keep Braille/text communication cards, if used, for two-way communication.",
+                        "Get preparedness tips for diabetics.",
+                        "The U.S. Department of Health and Human Services' online tool helps people locate and access their electronic health records from a variety of sources.",
+                        "Plan for children with disabilities and people who may have difficulty in unfamiliar or chaotic environments.",
+                    ]
+                    
+                    earthquakeSupplyList = [
+                        "Practice Drop, Cover, and Hold On with family and coworkers",
+                        "Secure heavy items in your home like bookcases, refrigerators, televisions and objects that hang on walls",
+                        "Store heavy and breakable objects on low shelves",
+                        "Create a family emergency communications plan that has an out-of-state contact. Plan where to meet if you get separated.",
+                        "Consider obtaining an earthquake insurance policy. A standard homeowner’s insurance policy does not cover earthquake damage",
+                        "Consider making improvements to your building to fix structural issues that could cause your building to collapse during an earthquake"
+                    
+                    ]
+                    
+                    floodSupplyList = [
+                        "Know types of flood risk in your area. Visit FEMA’s Flood Map Service Center for information",
+                        "Sign up for your community’s warning system. The Emergency Alert System (EAS) and National Oceanic and Atmospheric Administration (NOAA) Weather Radio also provide emergency alerts",
+                        "If flash flooding is a risk in your location monitor potential signs, such as heavy rain",
+                        "Learn and practice evacuation routes, shelter plans and flash flood response",
+                        "Build an emergency supply kit in case you have to leave immediately or if services are cut off",
+                        "Purchase or renew a flood insurance policy. Homeowner’s policies do not cover flooding. It typically takes up to 30 days for a policy to go into effect so the time to buy is well before a disaster. Get flood coverage under the National Flood Insurance Program (NFIP).",
+                        "Keep important documents in a waterproof container",
+                        "Create password-protected digital copies",
+                        "Move valuables to higher levels",
+                        "Declutter drains and gutters",
+                        "Install check valves",
+                        "Consider a sump pump with a battery."
+                    
+                    ]
+                    
+                    hurricaneSupplyList = [
+                        "bring in outside furniture",
+                        "You may have to evacuate quickly due to a hurricane. Learn your evacuation routes, practice with household, pets, and identify where you will stay",
+                        "bring in outside furniture",
+                        "consider hurricane shutters",
+                    ]
+                    
+                    tornadoSupplyList = [
+                        "Know the signs of a tornado, including a rotating, funnel-shaped cloud; an approaching cloud of debris; or a loud roar—similar to a freight train",
+                    "Sign up for your community’s warning system. The Emergency Alert System (EAS) and National Oceanic and Atmospheric Administration (NOAA) Weather Radio also provide emergency alerts. If your community has sirens, then become familiar with the warning tone.",
+                    "Pay attention to weather reports. Meteorologists can predict when conditions might be right for a tornado",
+                    "Identify and practice going to a safe shelter, while following the latest social and physical-distancing and other health safety guidelines from the Centers for Disease Control and Prevention and your local health authorities, in the event of high winds, such as a safe room built using FEMA criteria or a storm shelter built to ICC 500 standards. The next best protection is a small, interior, windowless room on the lowest level of a sturdy building.",
+                    ]
+                    
+                    widlfireSupplyList = [
+                        "Know your community’s evacuation plans and find several ways to leave the area. Drive the evacuation routes and find shelter locations. Have a plan for pets and livestock.",
+>>>>>>> master
                         "N95 mask",
                         "CO2 detectors",
                         "Fire extinguishers",
@@ -756,36 +1080,33 @@ function currentLocation () {
                     
                     
             var calledState=window[state1];
-                $("#disaster-prone").empty();
-                h4El= $("<h4>")
-                h4El.text(city1+", "+state1 + " is prone to: ")
-                $("#disaster-prone").append(h4El)
             if (calledState.earthquakes==true){
                 console.log("true")
                 h5El= $("<h5>")
                 h5El.text("Earthquakes")
                 $("#disaster-prone").append(h5El)
+                console.log("generatle")
                 generateList(earthquakeSupplyList);
             }
             if (calledState.floods==true){
                 console.log("true")
                 h5El= $("<h5>")
                 h5El.text("Floods")
-                $("#lists").append(h5El)
+                $("#disaster-prone").append(h5El)
                 generateList(floodSupplyList);
             }
             if (calledState.hurricanes==true){
                 console.log("true")
                 h5El= $("<h5>")
                 h5El.text("Hurricanes")
-                $("#lists").append(h5El)
+                $("#disaster-prone").append(h5El)
                 generateList(hurricaneSupplyList);
             }
             if (calledState.tornados==true){
                 console.log("true")
                 h5El= $("<h5>")
                 h5El.text("Tornados")
-                $("#lists").append(h5El)
+                $("#disaster-prone").append(h5El)
                 generateList(tornadoSupplyList);
             }
             if (calledState.wildfires==true){
@@ -803,7 +1124,8 @@ function currentLocation () {
             if (disabilitiesSubmit!=="no"){
                 generateList(disabilitiesSupplyList);
             }
-            generateList(generalSupplyList);
+            
+           
         }else{
             if ($("#option2").parent().attr("class").includes("active")){
                 var zombieSupplyList = [
@@ -814,6 +1136,9 @@ function currentLocation () {
                     
                     
                 ]
+                h5El= $("<h5>")
+                h5El.text("Zombies")
+                $("#disaster-prone").append(h5El)
                 generateList(zombieSupplyList);
             }
             
@@ -824,6 +1149,9 @@ function currentLocation () {
                     "Tin foil",
                     "Remove all tooth fillings"
                 ]
+                h5El= $("<h5>")
+                h5El.text("Aliens")
+                $("#disaster-prone").append(h5El)
                 generateList(alienSupplyList);
             }}
             
@@ -841,9 +1169,14 @@ currentLocation();
 
 
 
-
-
-
+var disabilitiesSupplyList;
+var childrenSupplyList;
+var generalSupplyList;
+var widlfireSupplyList;
+var tornadoSupplyList;
+var hurricaneSupplyList;
+var earthquakeSupplyList;
+var floodSupplyList;
 
 
 
@@ -852,12 +1185,32 @@ $("#new-location").on("click", function(){
     event.preventDefault();
     var city1 = $("input").val();
     var state1 = $("select").val();
-    // weather(city1);
+    weather(city1);
+    var h6El = $("<h6>")
+            $("#current-location").prepend(h6El)
+            if (window[state1].southernState==true){
+                $("#disaster-list").html(southElement);
+            }
+            if (window[state1].northeasternState==true){
+                $("#disaster-list").html(northeastElement);
+            }
+            if (window[state1].westernState==true){
+                $("#disaster-list").html(westElement);
+            }
+            if (window[state1].midwesternState==true){
+                $("#disaster-list").html(midwestElement);
+            }
+
     $(".map-image").attr("src", "https://maps.googleapis.com/maps/api/staticmap?center="+ city1 + "," + state1 + "&zoom=13&size=950x950&key=AIzaSyCfzql8n3orawbtaEJs17tPctto036AFeg")
    $(".city-name").text("You are in " + city1 + ", " +state1)
+   
+
+   
+
 
 
    $("#generate").on("click",function(){
+    supplyList.innerHTML="";
     $("#disaster-prone").empty();
             h4El= $("<h4>")
             h4El.text(city1+", "+state1 + " is prone to: ")
@@ -897,6 +1250,7 @@ $("#new-location").on("click", function(){
         generateList(widlfireSupplyList);
     }
     
+    
 
     var disabilitiesSubmit = document.getElementById("exampleFormControlSelect3").value;
     var numberSubmit = document.getElementById("exampleFormControlSelect1").value;
@@ -913,16 +1267,33 @@ $("#new-location").on("click", function(){
     if (disabilitiesSubmit!=="no"){
         generateList(disabilitiesSupplyList);
     }
-    generateList(generalSupplyList);
+  
 }else{
     if ($("#option2").parent().attr("class").includes("active")){
-        generateList(zombieSupplyList);
+        var zombieSupplyList = [
+            "cross-bow",
+            "strong deodarant",
+            "sturdy helmet",
+        ]
+        h5El= $("<h5>")
+                h5El.text("Zombies")
+                $("#disaster-prone").append(h5El)
+                generateList(zombieSupplyList);
+        
     }
-
-    if ($("#option3").parent().attr("class").includes("active")){
-        generateList(alienSupplyList);
-    }}
     
+    if ($("#option3").parent().attr("class").includes("active")){
+        var alienSupplyList = [
+            "anti-abduction boots",
+            "tin-foil hat",
+        ]
+        h5El= $("<h5>")
+                h5El.text("Aliens")
+                $("#disaster-prone").append(h5El)
+              
+            generateList(alienSupplyList);
+    }}
+
 
     //gathering which other lists to display based on state
    
@@ -941,6 +1312,7 @@ $("#new-location").on("click", function(){
 
 // function to get weather
 function weather(city1){
+    $("#weather-display").empty();
     var apiKey = "bb06c0b8789f5256fcbbe492b33425e3";
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city1 + "&appid=" + apiKey + "&units=imperial";
     
@@ -958,8 +1330,9 @@ function weather(city1){
         imageEl=$("<img>")
         imageEl.attr("src", "http://openweathermap.org/img/wn/" + icon + "@2x.png")
         imageEl.attr("class", "weather-icon")
-        $("#current-location").append(pEl)
-        $("#current-location").append(imageEl)
+        $("#weather-display").append(pEl)
+        $("#weather-display").append(imageEl)
+        
     });
     }
 
@@ -990,5 +1363,4 @@ function comparison(state) {
         }
     }
 }
-
 
