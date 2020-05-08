@@ -6,7 +6,9 @@ var AL = {
     tornados: false,
     wildfires: true,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    region: "south"
+
 };
     
 var AK= {
@@ -16,7 +18,8 @@ var AK= {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    region: "west"
 };
 
 var AZ= {
@@ -26,7 +29,8 @@ var AZ= {
     tornados: false,
     wildfires: true,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    region: "west"
 };
 
 var AR= {
@@ -36,7 +40,8 @@ var AR= {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    region: "south"
 };
 
 var CA= {
@@ -46,7 +51,8 @@ var CA= {
     tornados: false,
     wildfires: true,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    region: "west",
 };
 
 var CO= {
@@ -56,7 +62,8 @@ var CO= {
     tornados: true,
     wildfires: true,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    region: "west",
 };
 
 var CT= {
@@ -66,7 +73,8 @@ var CT= {
     tornados: false,
     wildfires: false,
     zombieApocalypse: false,
-    alienInvasion: false
+    alienInvasion: false,
+    region: "N"
 };
 
 var DE= {
@@ -499,8 +507,32 @@ var WY= {
     alienInvasion: false
 };
 
+var England={
+    earthquakes: true,
+    floods: false,
+    hurricanes: false,
+    tornados: false,
+    wildfires: false, 
+    zombieApocalypse: false,
+    alienInvasion: false
+};
 
+// var westText =[
+// "1906 san Francisco earthquake: 1906,3000+ deaths, 7.9mg",
+// "Paradise California wildfire: 2018, 85 deaths, deadliest fire in California history",
+// "Los Angeles flood: 1938, 115 deaths, deadliest disaster in LA history",
+// "Northridge earthquake: 1994, 60 deaths, 6.9 mg",
+// ]
 
+// function disasterRegion (regiontext){
+//     for (var i=0; i<regiontext.length; i++){
+//         var pEl = $("<p>")
+//         pEl.attr("class", "recent-disasters")
+//         pEl.text(regiontext[i])
+//         $("#disaster-list").append(pEl)
+//         console.log(pEl)
+//     }
+// }
 
 //variables to plug in dependents number
 var depNum = 0;
@@ -518,10 +550,11 @@ var supplyList = document.createElement("ul");
     listsDiv.appendChild(supplyList);
     localStorage.setItem("basket", "");
 function generateList (anyList){
-    supplyList.innerHTML="";
+    // supplyList.innerHTML="";
     for (var i=0; i<anyList.length; i++){
     var supplyItems=document.createElement("UL");
     supplyItems.innerHTML= anyList[i]
+   
 
     $(supplyItems).on("click", function(){
         basketArray.push(this.innerHTML);
@@ -593,8 +626,8 @@ function currentLocation () {
     // geolocation function to get latitude and longitude
     navigator.geolocation.getCurrentPosition(function(position){
         console.log(position);
-        var lat = position.coords.latitude;
-        var long= position.coords.longitude;
+        var lat = 53.483959;
+        var long= -2.244644;
         
         // call to google API to get location by longitude and latitude
         $.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + long + "&key=AIzaSyCfzql8n3orawbtaEJs17tPctto036AFeg",function(){
@@ -603,6 +636,9 @@ function currentLocation () {
             imgEl.attr("src", "https://maps.googleapis.com/maps/api/staticmap?center=" + lat + "," + long + "&zoom=13&size=250x250&key=AIzaSyCfzql8n3orawbtaEJs17tPctto036AFeg")
             imgEl.attr("class", "map-image")
                 $("#current-location").append(imgEl)
+
+           
+
             
         });
         //  call to mapquest API to get city and state of longitude and latitude
@@ -619,7 +655,20 @@ function currentLocation () {
             h6El.text("You are in " + city1 + ", " +state1)
             weather(city1);
             $("#current-location").prepend(h6El)
+
             
+            // if(window[state1].region==="west"){
+            //     console.log(window[state1].region)
+            //     var h3El=$("<h2>")
+            //     h3El.attr("class","recent-disaster-head")
+            //     h3El.text("Western United States Disaster History ")
+            //     $("#disaster-list").append(h3El)
+            //     disasterRegion(westText);
+            // }
+
+
+
+
             
             
             $("#generate").on("click",function(){
@@ -752,7 +801,6 @@ function currentLocation () {
                 h5El= $("<h5>")
                 h5El.text("Earthquakes")
                 $("#disaster-prone").append(h5El)
-                console.log("generatle")
                 generateList(earthquakeSupplyList);
             }
             if (calledState.floods==true){
@@ -815,7 +863,8 @@ function currentLocation () {
                 $("#disaster-prone").append(h5El)
                 generateList(alienSupplyList);
             }}
-            
+
+           
         })
     });
 })
@@ -823,13 +872,7 @@ function currentLocation () {
 
 currentLocation();
 
-
-
-
-
-
-
-
+// gobally declaring variable
 var disabilitiesSupplyList;
 var childrenSupplyList;
 var generalSupplyList;
@@ -838,6 +881,7 @@ var tornadoSupplyList;
 var hurricaneSupplyList;
 var earthquakeSupplyList;
 var floodSupplyList;
+
 
 
 
@@ -850,7 +894,7 @@ $("#new-location").on("click", function(){
     $(".map-image").attr("src", "https://maps.googleapis.com/maps/api/staticmap?center="+ city1 + "," + state1 + "&zoom=13&size=950x950&key=AIzaSyCfzql8n3orawbtaEJs17tPctto036AFeg")
    $(".city-name").text("You are in " + city1 + ", " +state1)
 
-
+    console.log(state1)
 
 
 
@@ -863,7 +907,7 @@ $("#new-location").on("click", function(){
             
     if ($("#option1").parent().attr("class").includes("active")){
     var calledState=window[state1];
-    
+    console.log(state1)
     if (calledState.earthquakes===true){
         h5El= $("<h5>")
         h5El.text("Earthquakes")
@@ -906,20 +950,24 @@ $("#new-location").on("click", function(){
    console.log(babiesSubmit);
     if (babiesSubmit!=="0"){
         generateList(childrenSupplyList);
+        
     }
 
     if (disabilitiesSubmit!=="no"){
         generateList(disabilitiesSupplyList);
+        
     }
-  
+   
 }else{
     if ($("#option2").parent().attr("class").includes("active")){
+        console.log(state1)
         var zombieSupplyList = [
             "cross-bow",
             "strong deodarant",
             "sturdy helmet",
         ]
         h5El= $("<h5>")
+        console.log(state1)
                 h5El.text("Zombies")
                 $("#disaster-prone").append(h5El)
                 generateList(zombieSupplyList);
@@ -948,7 +996,7 @@ $("#new-location").on("click", function(){
     // if (calledState.zombieApocalypse=true){
     //     generateList(zombieSupplyList);
     // }
-
+    
 })
 
 
