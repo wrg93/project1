@@ -211,6 +211,8 @@ width: 80%;
 
 #lists{
   color: white;
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 #shopping-cart {
@@ -305,4 +307,19 @@ color: lightskyblue;
 #shopping {
 
 margin-top: 12px;
+}
+
+#disaster-prone{
+
+  text-align: center;
+}
+
+h5 {
+
+  color: red;
+  text-decoration: underline;
+  font-family: fantasy;
+  font-weight: 500;
+  font-size: 28px;
+  margin: 12px 0;
 }
