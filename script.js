@@ -805,7 +805,7 @@ $("#shopping").on("click", function(){
     $("#shopping-cart").append(basketList);
     for (var i=0; i<basket.length; i++){
     var basketItems = document.createElement("LI");
-    basketItems.innerHTML= "<a href= 'https://www.google.com/search?psb=1&tbm=shop&q=" + basket[i] + "&ved=0CAQQr4sDKAJqFwoTCIqX98S0o-kCFRPpYgodgbgOqxAC'>" + basket[i] + "</a>"
+    basketItems.innerHTML= "<a href= 'https://www.google.com/search?psb=1&tbm=shop&q=" + basket[i] + "&ved=0CAQQr4sDKAJqFwoTCIqX98S0o-kCFRPpYgodgbgOqxAC' target='_blank'>" + basket[i] + "</a>"
     basketList.appendChild(basketItems);
 }
 })
@@ -1213,7 +1213,7 @@ $("#new-location").on("click", function(){
     
 })
 
-
+$("input").val("");
 });
 
 // function to get weather
