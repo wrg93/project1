@@ -927,67 +927,53 @@ function currentLocation () {
                     "Paper and pencil"  
                     ];
                     
-                    childrenSupplyList = ["Books", "games", "puzzles", "Infant formula", "bottles", (babNum*3) +" days supply of diapers", "wipes", "diaper rash cream"];
+                    var childrenSupplyList = [
+                        "Entertainment: books, games, puzzles, etc", 
+                        "Infant formula", 
+                        "Bottles", 
+                        (babNum*3) +" days supply of diapers", 
+                        "Baby wipes", 
+                        "Diaper rash cream"  
+                    ];
                     
-                    disabilitiesSupplyList = [
-                        "Be ready to explain to first responders that you need to evacuate and choose to go to a shelter with your family, service animal, caregiver, personal assistant and your assistive technology devices and supplies.",
-                        "Plan ahead for accessible transportation that you may need for evacuation or getting to a medical clinic. Work with local services, public transportation or paratransit to identify your local or private accessible transportation options.",
-                        "Inform your support network where you keep your emergency supplies. You may want to consider giving one member a key to your house or apartment.",
-                        "Contact your city or county government’s emergency management agency or office. Many local offices keep lists of people with disabilities so they can be helped quickly in a sudden emergency.",
-                        "If you are dependent on dialysis or other life-sustaining treatment know the location and availability of more than one facility.",
-                        "If you use medical equipment in your home that requires electricity, talk to your doctor or health care provider about how you can prepare for its use during a power outage.",
-                        "Wear medical alert tags or bracelets.",
-                        "If you have a communication disability make sure your emergency information says the best way to communicate with you.",
-                        "If you use an augmentative communications device or other assistive technologies, plan how you will evacuate with the devices or how you will replace equipment if lost or destroyed. Keep model numbers and note where the equipment came from (Medicaid, Medicare, private insurance, etc.).",
-                        "Plan how you will communicate with others if your equipment is not working, including laminated cards with phrases, pictures or pictograms.",
-                        "Keep Braille/text communication cards, if used, for two-way communication.",
-                        "Get preparedness tips for diabetics.",
-                        "The U.S. Department of Health and Human Services' online tool helps people locate and access their electronic health records from a variety of sources.",
-                        "Plan for children with disabilities and people who may have difficulty in unfamiliar or chaotic environments.",
-                    ]
+                    var disabilitiesSupplyList = [
+                        "Medical alert tags or bracelets.",
+                        "Associated medications",
+                        "Braille communication cards",
+                        "Spare batteries or power supplies for medical equipment",    
+                        "Map of nearest treatment facilities"
+                    ];
                     
-                    earthquakeSupplyList = [
-                        "Practice Drop, Cover, and Hold On with family and coworkers",
-                        "Secure heavy items in your home like bookcases, refrigerators, televisions and objects that hang on walls",
-                        "Store heavy and breakable objects on low shelves",
-                        "Create a family emergency communications plan that has an out-of-state contact. Plan where to meet if you get separated.",
-                        "Consider obtaining an earthquake insurance policy. A standard homeowner’s insurance policy does not cover earthquake damage",
-                        "Consider making improvements to your building to fix structural issues that could cause your building to collapse during an earthquake"
+                    var earthquakeSupplyList = [
+                        "Fastening hardware: duct tape, paracord, etc.",
+                        "Utility shutoff tools",   
+                        "Zip-ties",
+                        "Tent or auxillary shelter"
+                    ];
+
+                    var floodSupplyList = [
+                        "Sandbags",
+                        "Sump pump with spare power supply",
+                        "Waterproof storage containers",  
+                        "Rain jacket",
+                        "Waterproof boots"                      
+                    ];
                     
-                    ]
+                    var hurricaneSupplyList = [
+                        "Cordage and rope",
+                        "Poncho",
+                        "Map with evacuation routes",
+                        "Barricading hardware: plywood, tie-down ropes, etc"
+                    ];
                     
-                    floodSupplyList = [
-                        "Know types of flood risk in your area. Visit FEMA’s Flood Map Service Center for information",
-                        "Sign up for your community’s warning system. The Emergency Alert System (EAS) and National Oceanic and Atmospheric Administration (NOAA) Weather Radio also provide emergency alerts",
-                        "If flash flooding is a risk in your location monitor potential signs, such as heavy rain",
-                        "Learn and practice evacuation routes, shelter plans and flash flood response",
-                        "Build an emergency supply kit in case you have to leave immediately or if services are cut off",
-                        "Purchase or renew a flood insurance policy. Homeowner’s policies do not cover flooding. It typically takes up to 30 days for a policy to go into effect so the time to buy is well before a disaster. Get flood coverage under the National Flood Insurance Program (NFIP).",
-                        "Keep important documents in a waterproof container",
-                        "Create password-protected digital copies",
-                        "Move valuables to higher levels",
-                        "Declutter drains and gutters",
-                        "Install check valves",
-                        "Consider a sump pump with a battery."
-                    
-                    ]
-                    
-                    hurricaneSupplyList = [
-                        "bring in outside furniture",
-                        "You may have to evacuate quickly due to a hurricane. Learn your evacuation routes, practice with household, pets, and identify where you will stay",
-                        "bring in outside furniture",
-                        "consider hurricane shutters",
-                    ]
-                    
-                    tornadoSupplyList = [
-                        "Know the signs of a tornado, including a rotating, funnel-shaped cloud; an approaching cloud of debris; or a loud roar—similar to a freight train",
-                    "Sign up for your community’s warning system. The Emergency Alert System (EAS) and National Oceanic and Atmospheric Administration (NOAA) Weather Radio also provide emergency alerts. If your community has sirens, then become familiar with the warning tone.",
-                    "Pay attention to weather reports. Meteorologists can predict when conditions might be right for a tornado",
-                    "Identify and practice going to a safe shelter, while following the latest social and physical-distancing and other health safety guidelines from the Centers for Disease Control and Prevention and your local health authorities, in the event of high winds, such as a safe room built using FEMA criteria or a storm shelter built to ICC 500 standards. The next best protection is a small, interior, windowless room on the lowest level of a sturdy building.",
+                    var tornadoSupplyList = [
+                        "Directives and maps for evacuation",
+                        "Evacuation vehicle",
+                        "Map of utility shutoff valves",
+                        "Cleared basement access"
                     ]
                     
                     widlfireSupplyList = [
-                        "Know your community’s evacuation plans and find several ways to leave the area. Drive the evacuation routes and find shelter locations. Have a plan for pets and livestock.",
                         "N95 mask",
                         "CO2 detectors",
                         "Fire extinguishers",
@@ -1249,32 +1235,4 @@ function weather(city1){
         $("#weather-display").append(imageEl)
     });
     }
-
-// Logic to compare which region the value exists in
-function comparison(state) {
-    for(let i = 0; i < westernStates.length; i++) {
-        if(state === westernStates[i]) {
-           return console.log(westText);
-           westPrint;
-        }
-    }
-    for(let i = 0; i < northeasternStates.length; i++) {
-        if(state === northeasternStates[i]) {
-            return console.log(northeastText);
-            northeastPrint;
-        }
-    }
-    for(let i = 0; i < midwesternState.length; i++) {
-        if(state === midwesternState[i]) {
-            return console.log(midwestText);
-            midwestPrint;
-        }
-    }
-    for(let i = 0; i < southernStates.length; i++) {
-        if(state === southernStates[i]) {
-            southPrint;
-            return console.log(southElement);
-        }
-    }
-}
 
