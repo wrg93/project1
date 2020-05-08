@@ -154,7 +154,7 @@ var HI= {
 
 var ID= {
     earthquakes: false,
-    floods: false,
+    floods: true,
     hurricanes: false,
     tornados: false,
     wildfires: true,
@@ -183,7 +183,7 @@ var IL= {
 
 var IN= {
     earthquakes: false,
-    floods: false,
+    floods: true,
     hurricanes: false,
     tornados: false,
     wildfires: false,
@@ -351,7 +351,7 @@ var MO= {
 
 var MT= {
     earthquakes: false,
-    floods: false,
+    floods: true,
     hurricanes: false,
     tornados: false,
     wildfires: false,
@@ -477,7 +477,7 @@ var ND= {
 
 var OH= {
     earthquakes: false,
-    floods: false,
+    floods: true,
     hurricanes: false,
     tornados: false,
     wildfires: false,
@@ -659,7 +659,7 @@ var WA = {
 
 var WV = {
     earthquakes: false,
-    floods: false,
+    floods: true,
     hurricanes: false,
     tornados: false,
     wildfires: false,
@@ -673,7 +673,7 @@ var WV = {
 
 var WI = {
     earthquakes: false,
-    floods: false,
+    floods: true,
     hurricanes: false,
     tornados: false,
     wildfires: false,
