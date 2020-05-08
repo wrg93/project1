@@ -572,7 +572,7 @@ function generateList (anyList){
 }
 basketList = document.createElement("UL");
 //displays items in shopping cart if shopping car is clixked
-$("#shopping-cart").on("click", function(){
+$("#shopping").on("click", function(){
    
     basketList.innerHTML="";
     var basket  = JSON.parse(localStorage.getItem("basket"))
@@ -626,7 +626,7 @@ function currentLocation () {
                 supplyList.innerHTML="";
                 $("#disaster-prone").empty();
                 h4El= $("<h4>")
-                h4El.text(city1+", "+state1 + " is prone to: ")
+                h4El.text(city1+", "+state1 + " is at threat from: ")
                 $("#disaster-prone").append(h4El)
                 if ($("#option1").parent().attr("class").includes("active")){
                     var disabilitiesSubmit = document.getElementById("exampleFormControlSelect3").value;
