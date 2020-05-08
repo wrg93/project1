@@ -1,60 +1,3 @@
-// div disaster-list   div to append disaster history to 
-// state1 and calledState  varriable indicating the state chosen 
-// \n is a line break
-// selectValue = the selcted state
-
-// 1.we need to first select option child form our select parent in our form control.
-// 1a. we first have to select the options, and then the child to grab the value.
-// 1b. $(".form-control") > $("option") > $(this)
-// 2. based on the value input, we must find a match in our 4 arrays to determine which region they are in.
-// 2a. first determine the length of each array, if they are the same, we can use one loop for all 4 and if not, we need to create 4 
-// loops to handle each array.
-// 2b. Once looped we need to take our value and match it to each array so we can establish a match.
-// 3.Once we determine which region they are in, we then display the corresponding text associated with the region.
-
-
-
-var westernStates = ["AK", "AR", "AZ", "CA", "CO", "HI", "ID", "MT", "NV", "NM", "OR", "UT", "WA", "WY" ]
-var northeasternStates = ["PA", "NY", "MD", "ME", "DE", "RI", "NJ", "MA", "VT", "CT", "NH"]
-var midwesternState = ["ND", "SD", "NE",  "KS", "MN", "IA", "MO", "WI", "IL", "MI", "IN", "OH"]
-var southernStates= ["TX", "OK", "AR", "LA", "MS", "KY", "TN", "AL", "WV", "VA", "NC", "SC", "GA", "FL", "MD" ]
-
-var southText = "Hurricane katrina: 2005, 1836 deaths, $125billion in damages Hurricane Maria: 2017, 2982 deaths,\n $90bilion in damage 1980 heatwave: 1980, 1700 deaths, $20billion in damages 1928 Okeechobee hurricane: 1928, 2823 deaths, $800million in damages Hurricane Audrey: 1957, 416 deaths, $147million in damages"
-var southElement = document.createElement("p")
-southElement.innerHTML=southText
-
-var midwestText = "1993, Great Flood of 1993, 50 dead, 37.3 billion damages 2012-13, North American Drought , 123 dead, 33.6 billion 1871, Peshitgo Forrest Fire, 1200 dead,  $170 million damages 2011, Super Outbreak, 324 dead, $3.2 billion damages"
-var midwestElement = document.createElement("p")
-midwestElement.innerHTML=westText
-
-var northeastText = "1889,  Johnstown Flood, 2208 dead, $497 million damages 1888, Great White Hurricane, 400+ dead, $710 million damages 1938, Great New England Hurricane, 682 dead, $4.7 billion damages 1927, Vermont Flood, 84+ dead, $5.5 billion"
-var northeastElement = document.createElement("p")
-northeastPrint.innerHTML=northeastText
-
-var westText = "1906 san Francisco earthquake: 1906,3000+ deaths, 7.9mg Paradise California wildfire: 2018, 85 deaths, deadliest fire in California history Los Angeles flood: 1938, 115 deaths, deadliest disaster in LA history.\n Northridge earthquake: 1994, 60 deaths, 6.9 mg"
-var westElement = document.createElement("p")
-westElement.innerHTML=westText
-
-function southPrint(){
-    $("#disaster-list").append(southElement);
-}
-
-function westPrint(){
-    $("#disaster-list").append("westText");
-}
-
-function midwestPrint(){
-    $(".disaster-list").append("midwestText");
-}
-
-function northeastPrint(){
-    $(".disaster-list").append("northeastText");
-}
-
-
-
-
-
 var AL = {
     earthquakes: true,
     floods: false,
@@ -757,14 +700,15 @@ var WY= {
 };
 
 var England={
-    earthquakes: true,
-    floods: false,
+    earthquakes: false,
+    floods: true,
     hurricanes: false,
     tornados: false,
     wildfires: false, 
     zombieApocalypse: false,
     alienInvasion: false
 };
+
 var southText = "Hurricane katrina: 2005, 1836 deaths, $125billion in damages Hurricane Maria: 2017, 2982 deaths,\n $90bilion in damage 1980 heatwave: 1980, 1700 deaths, $20billion in damages 1928 Okeechobee hurricane: 1928, 2823 deaths, $800million in damages Hurricane Audrey: 1957, 416 deaths, $147million in damages"
 var southElement = document.createElement("p");
 southElement.innerHTML=southText;
@@ -983,55 +927,6 @@ function currentLocation () {
                     "Paper and pencil"  
                     ];
                     
-<<<<<<< HEAD
-                    var childrenSupplyList = [
-                        "Entertainment: books, games, puzzles, etc", 
-                        "Infant formula", 
-                        "Bottles", 
-                        (babNum*3) +" days supply of diapers", 
-                        "Baby wipes", 
-                        "Diaper rash cream"  
-                    ];
-                    
-                    var disabilitiesSupplyList = [
-                        "Medical alert tags or bracelets.",
-                        "Associated medications",
-                        "Braille communication cards",
-                        "Spare batteries or power supplies for medical equipment",    
-                        "Map of nearest treatment facilities"
-                    ];
-                    
-                    var earthquakeSupplyList = [
-                        "Fastening hardware: duct tape, paracord, etc.",
-                        "Utility shutoff tools",   
-                        "Zip-ties",
-                        "Tent or auxillary shelter"
-                    ];
-                    
-                    var floodSupplyList = [
-                        "Sandbags",
-                        "Sump pump with spare power supply",
-                        "Waterproof storage containers",  
-                        "Rain jacket",
-                        "Waterproof boots"                      
-                    ];
-                    
-                    var hurricaneSupplyList = [
-                        "Cordage and rope",
-                        "Poncho",
-                        "Map with evacuation routes",
-                        "Barricading hardware: plywood, tie-down ropes, etc"
-                    ];
-                    
-                    var tornadoSupplyList = [
-                        "Directives and maps for evacuation",
-                        "Evacuation vehicle",
-                        "Map of utility shutoff valves",
-                        "Cleared basement access"
-                    ]
-                    
-                    var widlfireSupplyList = [
-=======
                     childrenSupplyList = ["Books", "games", "puzzles", "Infant formula", "bottles", (babNum*3) +" days supply of diapers", "wipes", "diaper rash cream"];
                     
                     disabilitiesSupplyList = [
@@ -1093,7 +988,6 @@ function currentLocation () {
                     
                     widlfireSupplyList = [
                         "Know your community’s evacuation plans and find several ways to leave the area. Drive the evacuation routes and find shelter locations. Have a plan for pets and livestock.",
->>>>>>> master
                         "N95 mask",
                         "CO2 detectors",
                         "Fire extinguishers",
