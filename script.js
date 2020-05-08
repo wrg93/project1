@@ -518,16 +518,14 @@ var supplyList = document.createElement("ul");
     listsDiv.appendChild(supplyList);
     localStorage.setItem("basket", "");
 function generateList (anyList){
-    
+    supplyList.innerHTML="";
     for (var i=0; i<anyList.length; i++){
     var supplyItems=document.createElement("UL");
     supplyItems.innerHTML= anyList[i]
-   // supplyItems.setAttribute("class", "list");
+
     $(supplyItems).on("click", function(){
-           // this.setAttribute("class","toBeRemoved");
-            basketArray.push(this.innerHTML);
-            localStorage.setItem("basket",JSON.stringify(basketArray));
-            //renderBasket();
+        basketArray.push(this.innerHTML);
+        localStorage.setItem("basket",JSON.stringify(basketArray));
 
     })
     supplyList.appendChild(supplyItems);
@@ -572,13 +570,20 @@ function generateList (anyList){
     
     }
 }
-
+basketList = document.createElement("UL");
+//displays items in shopping cart if shopping car is clixked
 $("#shopping-cart").on("click", function(){
-    var basketItems  = JSON.parse(localStorage.getItem("basket"))
-    $("#shopping-cart").append(basketItems);
-
+   
+    basketList.innerHTML="";
+    var basket  = JSON.parse(localStorage.getItem("basket"))
+   
+    $("#shopping-cart").append(basketList);
+    for (var i=0; i<basket.length; i++){
+    var basketItems = document.createElement("LI");
+    basketItems.innerHTML= "<a href= 'https://www.google.com/search?psb=1&tbm=shop&q=" + basket[i] + "&ved=0CAQQr4sDKAJqFwoTCIqX98S0o-kCFRPpYgodgbgOqxAC'>" + basket[i] + "</a>"
+    basketList.appendChild(basketItems);
+}
 })
-
 
 
 
