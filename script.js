@@ -814,12 +814,13 @@ $("#shopping").on("click", function(){
 
 
 var state1="";
+// function to get current location once website is open
 function currentLocation () {
     // geolocation function to get latitude and longitude
     navigator.geolocation.getCurrentPosition(function(position){
         console.log(position);
-        var lat = 53.483959;
-        var long= -2.244644;
+        var lat = position.coords.latitude;
+        var long= position.coords.longitude;
         
         // call to google API to get location by longitude and latitude
         $.get("https://maps.googleapis.com/maps/api/geocode/json?latlng=" + lat + "," + long + "&key=AIzaSyCfzql8n3orawbtaEJs17tPctto036AFeg",function(){
@@ -833,7 +834,7 @@ function currentLocation () {
 
             
         });
-        //  call to mapquest API to get city and state of longitude and latitude
+        //  call to mapquest API to get city and state based longitude and latitude
         var queryURL = "http://www.mapquestapi.com/geocoding/v1/address?key=iJn3fnxq6GVxdR2Czn9tCFjMdpiLFMPf&location=" + lat + "," + long;
         $.ajax({
             url: queryURL,
@@ -845,7 +846,9 @@ function currentLocation () {
             var h6El = $("<h6>")
             h6El.attr("class", "city-name")
             h6El.text("You are in " + city1 + ", " +state1)
+            // get weather for current location
             weather(city1);
+            // if statements to check for region of US
             $("#current-location").prepend(h6El)
             if (window[state1].southernState==true){
                 $("#disaster-list").html(southElement);
@@ -869,17 +872,16 @@ function currentLocation () {
             //     disasterRegion(westText);
             // }
 
-
-
-
-            
-            
+            // click event when generate list button is clicked for current location
             $("#generate").on("click",function(){
                 supplyList.innerHTML="";
+                // appends what disaster your city is at threat from
                 $("#disaster-prone").empty();
                 h4El= $("<h4>")
                 h4El.text(city1+", "+state1 + " is at threat from: ")
                 $("#disaster-prone").append(h4El)
+
+                // checks what list to display
                 if ($("#option1").parent().attr("class").includes("active")){
                     var disabilitiesSubmit = document.getElementById("exampleFormControlSelect3").value;
                     var numberSubmit = document.getElementById("exampleFormControlSelect1").value;
@@ -1094,8 +1096,11 @@ $("#new-location").on("click", function(){
     event.preventDefault();
     var city1 = $("input").val();
     var state1 = $("select").val();
+    
+    // checks weather for new location
     weather(city1);
-    var h6El = $("<h6>")
+
+        // if statements to check for region of US based on new location
             $("#current-location").prepend(h6El)
             if (window[state1].southernState==true){
                 $("#disaster-list").html(southElement);
@@ -1110,21 +1115,23 @@ $("#new-location").on("click", function(){
                 $("#disaster-list").html(midwestElement);
             }
 
+    // display image of map of new location
     $(".map-image").attr("src", "https://maps.googleapis.com/maps/api/staticmap?center="+ city1 + "," + state1 + "&zoom=13&size=950x950&key=AIzaSyCfzql8n3orawbtaEJs17tPctto036AFeg")
    $(".city-name").text("You are in " + city1 + ", " +state1)
    
 
-   
-
-
-
+    // click event when generate list button is clicked for nre location
    $("#generate").on("click",function(){
     supplyList.innerHTML="";
+
+
     $("#disaster-prone").empty();
+    // displays what new location is at threat from
             h4El= $("<h4>")
-            h4El.text(city1+", "+state1 + " is prone to: ")
+            h4El.text(city1+", "+state1 + " is at threat from: ")
             $("#disaster-prone").append(h4El)
-            
+
+    // if statment to check what disaster list to display for new location
     if ($("#option1").parent().attr("class").includes("active")){
     var calledState=window[state1];
     console.log(state1)
@@ -1159,8 +1166,6 @@ $("#new-location").on("click", function(){
         generateList(widlfireSupplyList);
     }
     
-    
-
     var disabilitiesSubmit = document.getElementById("exampleFormControlSelect3").value;
     var numberSubmit = document.getElementById("exampleFormControlSelect1").value;
     var babiesSubmit = document.getElementById("exampleFormControlSelect2").value;
@@ -1171,12 +1176,10 @@ $("#new-location").on("click", function(){
    console.log(babiesSubmit);
     if (babiesSubmit!=="0"){
         generateList(childrenSupplyList);
-        
     }
 
     if (disabilitiesSubmit!=="no"){
         generateList(disabilitiesSupplyList);
-        
     }
    
 }else{
@@ -1192,7 +1195,6 @@ $("#new-location").on("click", function(){
                 h5El.text("Zombies")
                 $("#disaster-prone").append(h5El)
                 generateList(zombieSupplyList);
-        
     }
     
     if ($("#option3").parent().attr("class").includes("active")){
@@ -1228,24 +1230,18 @@ function weather(city1){
     $("#weather-display").empty();
     var apiKey = "bb06c0b8789f5256fcbbe492b33425e3";
     var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city1 + "&appid=" + apiKey + "&units=imperial";
-    
-    
     $.ajax({
-    
     url: queryURL,
     method: "GET"
-    
     })
     .then(function(response){
         var icon = response.weather[0].icon;
         var pEl = $("<p id='weather-status'>Weather: " + response.main.temp +"°F; " + response.weather[0].description +  "</p>")
-        
         imageEl=$("<img>")
         imageEl.attr("src", "http://openweathermap.org/img/wn/" + icon + "@2x.png")
         imageEl.attr("class", "weather-icon")
         $("#weather-display").append(pEl)
         $("#weather-display").append(imageEl)
-        
     });
     }
 
