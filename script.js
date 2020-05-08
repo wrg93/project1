@@ -518,7 +518,7 @@ var supplyList = document.createElement("ul");
     listsDiv.appendChild(supplyList);
     localStorage.setItem("basket", "");
 function generateList (anyList){
-    
+    supplyList.innerHTML="";
     for (var i=0; i<anyList.length; i++){
     var supplyItems=document.createElement("UL");
     supplyItems.innerHTML= anyList[i]
@@ -570,23 +570,17 @@ function generateList (anyList){
     
     }
 }
+basketList = document.createElement("UL");
 //displays items in shopping cart if shopping car is clixked
 $("#shopping-cart").on("click", function(){
+   
+    basketList.innerHTML="";
     var basket  = JSON.parse(localStorage.getItem("basket"))
-    console.log(basket);
-
-    var basketList = document.createElement("UL");
-
+   
     $("#shopping-cart").append(basketList);
-
     for (var i=0; i<basket.length; i++){
-    
     var basketItems = document.createElement("LI");
-
-
     basketItems.textContent = basket[i];
-
-    
     basketList.appendChild(basketItems);
 }
 })
