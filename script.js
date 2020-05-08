@@ -929,8 +929,8 @@ function currentLocation () {
                     
                     childrenSupplyList = [
                         "Entertainment: books, games, puzzles, etc", 
-                        "Infant formula", 
-                        "Bottles", 
+                        (babNum*3) + " day supply of Infant formula", 
+                        (babNum) + " Bottle(s)", 
                         (babNum*3) +" days supply of diapers", 
                         "Baby wipes", 
                         "Diaper rash cream"  
@@ -955,13 +955,13 @@ function currentLocation () {
                         "Sandbags",
                         "Sump pump with spare power supply",
                         "Waterproof storage containers",  
-                        "Rain jacket",
+                        depNum + " Rain jackets",
                         "Waterproof boots"                      
                     ];
                     
                     hurricaneSupplyList = [
                         "Cordage and rope",
-                        "Poncho",
+                        depNum + " Ponchos",
                         "Map with evacuation routes",
                         "Barricading hardware: plywood, tie-down ropes, etc"
                     ];
@@ -974,13 +974,13 @@ function currentLocation () {
                     ]
                     
                     widlfireSupplyList = [
-                        "N95 mask",
+                        depNum + " N95 masks",
                         "CO2 detectors",
                         "Fire extinguishers",
                         "Rakes, shovels and tools",
                         "Debris clearance perimeter of 30 fett from shelter",
                         "Fire-proof storage container for important documents",
-                        "Fire blankets",
+                        depNum + " Fire blankets",
                         "Supplies to seal oppenings: duct tape, sand bags, etc.",
                     ];
                     
@@ -1179,7 +1179,8 @@ $("#new-location").on("click", function(){
         var zombieSupplyList = [
             "cross-bow",
             "strong deodarant",
-            "sturdy helmet",
+            "solid head gear",
+            "motorcycle"
         ]
         h5El= $("<h5>")
         console.log(state1)
@@ -1190,8 +1191,10 @@ $("#new-location").on("click", function(){
     
     if ($("#option3").parent().attr("class").includes("active")){
         var alienSupplyList = [
-            "anti-abduction boots",
+            "Reese's Pieces",
+            "Rifle with plenty of spare ammo",
             "tin-foil hat",
+            "universal translator"
         ]
         h5El= $("<h5>")
                 h5El.text("Aliens")
