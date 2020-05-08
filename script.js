@@ -512,39 +512,42 @@ var babNum=0;
 //function which takes items from any any list given and appends them to list
 
 var listsDiv=document.getElementById("lists");
-
+var basketArray=[];
 var supplyList = document.createElement("ul");
     supplyList.style.listStyleType="none";
     listsDiv.appendChild(supplyList);
-
-    //On click event to add and display basket items from local storage
-    var basketArray = [];
-    $(".list").on("click", function(){
-        this.setAttribute("class","toBeRemoved");
-        basketArray.push(this.innerHTML);
-        localStorage.setItem("basket",JSON.stringify(basketArray));
-        renderBasket();
-    })
-    
-    //function that renders Basket Items
-    function renderBasket(){
-        basketItems = localStorage.getItem("basket");
-        if (basketItems === null){
-            return;
-        }
-        console.log(basketItems);
-        document.body.appendChild(basketItems);
-    }
-
+    localStorage.setItem("basket", "");
 function generateList (anyList){
     
     for (var i=0; i<anyList.length; i++){
     var supplyItems=document.createElement("UL");
-    supplyItems.innerHTML= "<a onclick='localStorage.setItem(basketArray,this.textContent)'>" + anyList[i] + "</a>"
+    supplyItems.innerHTML= supplyItems.innerHTML= anyList[i]
     supplyItems.setAttribute("class", "list");
+    $(supplyItems).on("click", function(){
+            this.setAttribute("class","toBeRemoved");
+            basketArray.push(this.innerHTML);
+            localStorage.setItem("basket",JSON.stringify(basketArray));
+            //renderBasket();
+
+    })
     supplyList.appendChild(supplyItems);
 
+    //On click event to add and display basket items from local storage
+// var basketArray = [];
+// $(".list").on("click", function(){
+//     this.setAttribute("class","toBeRemoved");
+//     basketArray.push(this.innerHTML);
+//     localStorage.setItem("basket",JSON.stringify(basketArray));
+//     renderBasket();
+// })
 
+//function that renders Basket Items
+// function renderBasket(){
+//     basketItems = localStorage.getItem("basket");
+//     if (basketItems === null){
+//         return;
+//     }
+// }
 
     // supplyItems.innerHTML= "<a href= '#'>" + anyList[i] + "</a>"
    
@@ -961,6 +964,5 @@ function weather(city1){
         $("#weather-display").append(imageEl)
     });
     }
-
 
 
