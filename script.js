@@ -1,3 +1,59 @@
+// div disaster-list   div to append disaster history to 
+// state1 and calledState  varriable indicating the state chosen 
+// \n is a line break
+// selectValue = the selcted state
+
+// 1.we need to first select option child form our select parent in our form control.
+// 1a. we first have to select the options, and then the child to grab the value.
+// 1b. $(".form-control") > $("option") > $(this)
+// 2. based on the value input, we must find a match in our 4 arrays to determine which region they are in.
+// 2a. first determine the length of each array, if they are the same, we can use one loop for all 4 and if not, we need to create 4 
+// loops to handle each array.
+// 2b. Once looped we need to take our value and match it to each array so we can establish a match.
+// 3.Once we determine which region they are in, we then display the corresponding text associated with the region.
+
+
+
+var westernStates = ["AK", "AR", "AZ", "CA", "CO", "HI", "ID", "MT", "NV", "NM", "OR", "UT", "WA", "WY" ]
+var northeasternStates = ["PA", "NY", "MD", "ME", "DE", "RI", "NJ", "MA", "VT", "CT", "NH"]
+var midwesternState = ["ND", "SD", "NE",  "KS", "MN", "IA", "MO", "WI", "IL", "MI", "IN", "OH"]
+var southernStates= ["TX", "OK", "AR", "LA", "MS", "KY", "TN", "AL", "WV", "VA", "NC", "SC", "GA", "FL", "MD" ]
+
+var southText = "Hurricane katrina: 2005, 1836 deaths, $125billion in damages Hurricane Maria: 2017, 2982 deaths,\n $90bilion in damage 1980 heatwave: 1980, 1700 deaths, $20billion in damages 1928 Okeechobee hurricane: 1928, 2823 deaths, $800million in damages Hurricane Audrey: 1957, 416 deaths, $147million in damages"
+var southElement = document.createElement("p")
+southElement.innerHTML=southText
+
+var midwestText = "1993, Great Flood of 1993, 50 dead, 37.3 billion damages 2012-13, North American Drought , 123 dead, 33.6 billion 1871, Peshitgo Forrest Fire, 1200 dead,  $170 million damages 2011, Super Outbreak, 324 dead, $3.2 billion damages"
+var midwestElement = document.createElement("p")
+midwestElement.innerHTML=westText
+
+var northeastText = "1889,  Johnstown Flood, 2208 dead, $497 million damages 1888, Great White Hurricane, 400+ dead, $710 million damages 1938, Great New England Hurricane, 682 dead, $4.7 billion damages 1927, Vermont Flood, 84+ dead, $5.5 billion"
+var northeastElement = document.createElement("p")
+northeastPrint.innerHTML=northeastText
+
+var westText = "1906 san Francisco earthquake: 1906,3000+ deaths, 7.9mg Paradise California wildfire: 2018, 85 deaths, deadliest fire in California history Los Angeles flood: 1938, 115 deaths, deadliest disaster in LA history.\n Northridge earthquake: 1994, 60 deaths, 6.9 mg"
+var westElement = document.createElement("p")
+westElement.innerHTML=westText
+
+function southPrint(){
+    $("#disaster-list").append(southElement);
+}
+
+function westPrint(){
+    $("#disaster-list").append("westText");
+}
+
+function midwestPrint(){
+    $(".disaster-list").append("midwestText");
+}
+
+function northeastPrint(){
+    $(".disaster-list").append("northeastText");
+}
+
+
+
+
 
 var AL = {
     earthquakes: true,
@@ -856,6 +912,8 @@ function currentLocation () {
                 h4El.text(city1+", "+state1 + " is at threat from: ")
                 $("#disaster-prone").append(h4El)
                 if ($("#option1").parent().attr("class").includes("active")){
+                    // selectValue is used to grab the form select drop down's value
+                    var selectValue = $(".form-control option:selected").val();
                     var disabilitiesSubmit = document.getElementById("exampleFormControlSelect3").value;
                     var numberSubmit = document.getElementById("exampleFormControlSelect1").value;
                     var babiesSubmit = document.getElementById("exampleFormControlSelect2").value;
@@ -864,42 +922,89 @@ function currentLocation () {
                     generalSupplyList = document.createElement("UL");
                     generalSupplyList.setAttribute("id", "generalSupplyList");
                     generalSupplyList.setAttribute("class","list");
-                    generalSupplyList = [(depNum*3) + " Gallons of Water (one gallon per person per day for at least three days, for drinking and sanitation)", 
-                    "Food (at least a three-day supply of non-perishable food)",
-                    "Battery-powered or hand crank radio and a NOAA Weather Radio with tone alert",
+                    generalSupplyList = [(depNum*3) + "Water: one gallon per day per person", 
+                    "Food:  Minimum 3 day supply of non perishable food.  Factor in 2000 calories per day per person",
+                    "Radio:  Should include NOAA Weather chanels.  Ideally solar or hand cranked",
                     "Flashlight",
                     "First aid kit",
                     "Extra batteries",
-                    "Whistle (to signal for help)",
-                    "Dust mask (to help filter contaminated air)",
-                    "Plastic sheeting and duct tape (to shelter in place)",
-                    "Moist towelettes, garbage bags and plastic ties (for personal sanitation)",
-                    "Wrench or pliers (to turn off utilities)",
-                    "Manual can opener (for food)",
+                    "Whistle",
+                    "Dust mask",
+                    "Plastic tarps",
+                    "Duct tape",
+                    "Moist towelettes, garbage bags and plastic ties",
+                    "Wrench or pliers",
+                    "Manual can opener",
                     "Local maps",
                     "Cell phone with chargers and a backup battery",
-                    "Cloth face coverings (for everyone ages 2 and above)",
-                    "soap",
-                    "hand sanitizer", 
-                    "disinfecting wipes to disinfect surfaces",
+                    "Cloth face coverings",
+                    "Soap",
+                    "Hand sanitizer", 
+                    "Disinfecting wipes",
                     "Prescription medications",
-                    "Non-prescription medications such as pain relievers, anti-diarrhea medication, antacids or laxatives",
+                    "Over the counter medications:  pain relievers, anti-diarrhea medication, antacids, laxatives, etc.",
                     "Prescription eyeglasses and contact lens solution",
-                    
-                    "Pet food and extra water for your pet",
+                    "Pet food and water",
                     "Cash or traveler's checks",
-                    "Important family documents such as copies of insurance policies, identification and bank account records saved electronically or in a waterproof, portable container",
-                    "Sleeping bag or warm blanket for each person",
-                    "Complete change of clothing appropriate for your climate and sturdy shoes",
+                    "Important documents: insurance policies, identification, bank records, etc.",
+                    "Sleeping bag or warm blanket",
+                    "Extra clothing and shoes: limate appropriate and sturdy",
                     "Fire extinguisher",
-                    "Matches in a waterproof container",
+                    "Matches and lighters",
                     "Feminine supplies and personal hygiene items",
                     "Mess kits, paper cups, plates, paper towels and plastic utensils",
-                    "Paper and pencil"
-                    
-                    
+                    "Paper and pencil"  
                     ];
                     
+<<<<<<< HEAD
+                    var childrenSupplyList = [
+                        "Entertainment: books, games, puzzles, etc", 
+                        "Infant formula", 
+                        "Bottles", 
+                        (babNum*3) +" days supply of diapers", 
+                        "Baby wipes", 
+                        "Diaper rash cream"  
+                    ];
+                    
+                    var disabilitiesSupplyList = [
+                        "Medical alert tags or bracelets.",
+                        "Associated medications",
+                        "Braille communication cards",
+                        "Spare batteries or power supplies for medical equipment",    
+                        "Map of nearest treatment facilities"
+                    ];
+                    
+                    var earthquakeSupplyList = [
+                        "Fastening hardware: duct tape, paracord, etc.",
+                        "Utility shutoff tools",   
+                        "Zip-ties",
+                        "Tent or auxillary shelter"
+                    ];
+                    
+                    var floodSupplyList = [
+                        "Sandbags",
+                        "Sump pump with spare power supply",
+                        "Waterproof storage containers",  
+                        "Rain jacket",
+                        "Waterproof boots"                      
+                    ];
+                    
+                    var hurricaneSupplyList = [
+                        "Cordage and rope",
+                        "Poncho",
+                        "Map with evacuation routes",
+                        "Barricading hardware: plywood, tie-down ropes, etc"
+                    ];
+                    
+                    var tornadoSupplyList = [
+                        "Directives and maps for evacuation",
+                        "Evacuation vehicle",
+                        "Map of utility shutoff valves",
+                        "Cleared basement access"
+                    ]
+                    
+                    var widlfireSupplyList = [
+=======
                     childrenSupplyList = ["Books", "games", "puzzles", "Infant formula", "bottles", (babNum*3) +" days supply of diapers", "wipes", "diaper rash cream"];
                     
                     disabilitiesSupplyList = [
@@ -961,15 +1066,16 @@ function currentLocation () {
                     
                     widlfireSupplyList = [
                         "Know your community’s evacuation plans and find several ways to leave the area. Drive the evacuation routes and find shelter locations. Have a plan for pets and livestock.",
+>>>>>>> master
                         "N95 mask",
-                        "Designate a room that can be closed off from outside air. Close all doors and windows. Set up a portable air cleaner to keep indoor pollution levels low when smoky conditions exist.",
-                        "Keep important documents in a fireproof, safe place. Create password-protected digital copies.",
-                        "Use fire-resistant materials to build, renovate, or make repairs.",
-                        "Find an outdoor water source with a hose that can reach any area of your property.",
-                        "Create a fire-resistant zone that is free of leaves, debris, or flammable materials for at least 30 feet from your home.",
-                        "Review insurance coverage to make sure it is enough to replace your property.",
-                        "Pay attention to air quality alerts.",
-                    ]
+                        "CO2 detectors",
+                        "Fire extinguishers",
+                        "Rakes, shovels and tools",
+                        "Debris clearance perimeter of 30 fett from shelter",
+                        "Fire-proof storage container for important documents",
+                        "Fire blankets",
+                        "Supplies to seal oppenings: duct tape, sand bags, etc.",
+                    ];
                     
                     
                     
@@ -1023,9 +1129,12 @@ function currentLocation () {
         }else{
             if ($("#option2").parent().attr("class").includes("active")){
                 var zombieSupplyList = [
-                    "cross-bow",
-                    "strong deodarant",
-                    "sturdy helmet",
+                    "Cross-bow",
+                    "Strong deodarant",
+                    "Solid head gear",
+                    "Motorcycle"
+                    
+                    
                 ]
                 h5El= $("<h5>")
                 h5El.text("Zombies")
@@ -1035,8 +1144,10 @@ function currentLocation () {
             
             if ($("#option3").parent().attr("class").includes("active")){
                 var alienSupplyList = [
-                    "anti-abduction boots",
-                    "tin-foil hat",
+                    "Reese's Pieces",
+                    "Rifle with plenty of spare ammo",
+                    "Tin foil",
+                    "Remove all tooth fillings"
                 ]
                 h5El= $("<h5>")
                 h5El.text("Aliens")
@@ -1225,4 +1336,31 @@ function weather(city1){
     });
     }
 
+// Logic to compare which region the value exists in
+function comparison(state) {
+    for(let i = 0; i < westernStates.length; i++) {
+        if(state === westernStates[i]) {
+           return console.log(westText);
+           westPrint;
+        }
+    }
+    for(let i = 0; i < northeasternStates.length; i++) {
+        if(state === northeasternStates[i]) {
+            return console.log(northeastText);
+            northeastPrint;
+        }
+    }
+    for(let i = 0; i < midwesternState.length; i++) {
+        if(state === midwesternState[i]) {
+            return console.log(midwestText);
+            midwestPrint;
+        }
+    }
+    for(let i = 0; i < southernStates.length; i++) {
+        if(state === southernStates[i]) {
+            southPrint;
+            return console.log(southElement);
+        }
+    }
+}
 
