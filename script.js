@@ -927,7 +927,7 @@ function currentLocation () {
                     "Paper and pencil"  
                     ];
                     
-                    var childrenSupplyList = [
+                    childrenSupplyList = [
                         "Entertainment: books, games, puzzles, etc", 
                         "Infant formula", 
                         "Bottles", 
@@ -936,7 +936,7 @@ function currentLocation () {
                         "Diaper rash cream"  
                     ];
                     
-                    var disabilitiesSupplyList = [
+                    disabilitiesSupplyList = [
                         "Medical alert tags or bracelets.",
                         "Associated medications",
                         "Braille communication cards",
@@ -944,14 +944,14 @@ function currentLocation () {
                         "Map of nearest treatment facilities"
                     ];
                     
-                    var earthquakeSupplyList = [
+                    earthquakeSupplyList = [
                         "Fastening hardware: duct tape, paracord, etc.",
                         "Utility shutoff tools",   
                         "Zip-ties",
                         "Tent or auxillary shelter"
                     ];
 
-                    var floodSupplyList = [
+                    floodSupplyList = [
                         "Sandbags",
                         "Sump pump with spare power supply",
                         "Waterproof storage containers",  
@@ -959,14 +959,14 @@ function currentLocation () {
                         "Waterproof boots"                      
                     ];
                     
-                    var hurricaneSupplyList = [
+                    hurricaneSupplyList = [
                         "Cordage and rope",
                         "Poncho",
                         "Map with evacuation routes",
                         "Barricading hardware: plywood, tie-down ropes, etc"
                     ];
                     
-                    var tornadoSupplyList = [
+                    tornadoSupplyList = [
                         "Directives and maps for evacuation",
                         "Evacuation vehicle",
                         "Map of utility shutoff valves",
@@ -1092,7 +1092,7 @@ $("#new-location").on("click", function(){
     weather(city1);
 
         // if statements to check for region of US based on new location
-            $("#current-location").prepend(h6El)
+            // $("#current-location").prepend(h6El)
             if (window[state1].southernState==true){
                 $("#disaster-list").html(southElement);
             }
