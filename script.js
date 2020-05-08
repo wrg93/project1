@@ -851,16 +851,28 @@ function currentLocation () {
             // if statements to check for region of US
             $("#current-location").prepend(h6El)
             if (window[state1].southernState==true){
-                $("#disaster-list").html(southElement);
+                $("#southdisasters").css("display", "block");
+                $("#northeastdisasters").css("display","none");
+                $("#midwestdisasters").css("display","none");
+                $("#westdisasters").css("display", "none");
             }
             if (window[state1].northeasternState==true){
-                $("#disaster-list").html(northeastElement);
+                $("#southdisasters").css("display", "none");
+                $("#northeastdisasters").css("display","block");
+                $("#midwestdisasters").css("display","none");
+                $("#westdisasters").css("display", "none");
             }
             if (window[state1].westernState==true){
-                $("#disaster-list").html(westElement);
+                $("#southdisasters").css("display", "none");
+                $("#northeastdisasters").css("display","none");
+                $("#midwestdisasters").css("display","none");
+                $("#westdisasters").css("display", "block");
             }
             if (window[state1].midwesternState==true){
-                $("#disaster-list").html(midwestElement);
+                $("#southdisasters").css("display", "none");
+                $("#northeastdisasters").css("display","none");
+                $("#midwestdisasters").css("display","block");
+                $("#westdisasters").css("display", "none");
             }
             
             // if(window[state1].region==="west"){
@@ -1094,16 +1106,28 @@ $("#new-location").on("click", function(){
         // if statements to check for region of US based on new location
             // $("#current-location").prepend(h6El)
             if (window[state1].southernState==true){
-                $("#disaster-list").html(southElement);
+                $("#southdisasters").css("display", "block");
+                $("#northeastdisasters").css("display","none");
+                $("#midwestdisasters").css("display","none");
+                $("#westdisasters").css("display", "none");
             }
             if (window[state1].northeasternState==true){
-                $("#disaster-list").html(northeastElement);
+                $("#southdisasters").css("display", "none");
+                $("#northeastdisasters").css("display","block");
+                $("#midwestdisasters").css("display","none");
+                $("#westdisasters").css("display", "none");
             }
             if (window[state1].westernState==true){
-                $("#disaster-list").html(westElement);
+                $("#southdisasters").css("display", "none");
+                $("#northeastdisasters").css("display","none");
+                $("#midwestdisasters").css("display","none");
+                $("#westdisasters").css("display", "block");
             }
             if (window[state1].midwesternState==true){
-                $("#disaster-list").html(midwestElement);
+                $("#southdisasters").css("display", "none");
+                $("#northeastdisasters").css("display","none");
+                $("#midwestdisasters").css("display","block");
+                $("#westdisasters").css("display", "none");
             }
 
     // display image of map of new location
