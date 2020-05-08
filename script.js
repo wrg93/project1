@@ -521,10 +521,10 @@ function generateList (anyList){
     
     for (var i=0; i<anyList.length; i++){
     var supplyItems=document.createElement("UL");
-    supplyItems.innerHTML= supplyItems.innerHTML= anyList[i]
-    supplyItems.setAttribute("class", "list");
+    supplyItems.innerHTML= anyList[i]
+   // supplyItems.setAttribute("class", "list");
     $(supplyItems).on("click", function(){
-            this.setAttribute("class","toBeRemoved");
+           // this.setAttribute("class","toBeRemoved");
             basketArray.push(this.innerHTML);
             localStorage.setItem("basket",JSON.stringify(basketArray));
             //renderBasket();
@@ -532,22 +532,27 @@ function generateList (anyList){
     })
     supplyList.appendChild(supplyItems);
 
-    //On click event to add and display basket items from local storage
+ 
+
+//function that renders Basket Items
+
+    
+    // if (basketItems === null){
+    //     return;
+        
+    // }
+
+
+
+   //On click event to add and display basket items from local storage
 // var basketArray = [];
-// $(".list").on("click", function(){
+// $("#shopping-list").on("click", function(){
 //     this.setAttribute("class","toBeRemoved");
 //     basketArray.push(this.innerHTML);
 //     localStorage.setItem("basket",JSON.stringify(basketArray));
 //     renderBasket();
 // })
 
-//function that renders Basket Items
-// function renderBasket(){
-//     basketItems = localStorage.getItem("basket");
-//     if (basketItems === null){
-//         return;
-//     }
-// }
 
     // supplyItems.innerHTML= "<a href= '#'>" + anyList[i] + "</a>"
    
@@ -568,7 +573,11 @@ function generateList (anyList){
     }
 }
 
+$("#shopping-cart").on("click", function(){
+    var basketItems  = JSON.parse(localStorage.getItem("basket"))
+    $("#shopping-cart").append(basketItems);
 
+})
 
 
 
