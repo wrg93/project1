@@ -580,7 +580,7 @@ $("#shopping-cart").on("click", function(){
     $("#shopping-cart").append(basketList);
     for (var i=0; i<basket.length; i++){
     var basketItems = document.createElement("LI");
-    basketItems.textContent = basket[i];
+    basketItems.innerHTML= "<a href= 'https://www.google.com/search?psb=1&tbm=shop&q=" + basket[i] + "&ved=0CAQQr4sDKAJqFwoTCIqX98S0o-kCFRPpYgodgbgOqxAC'>" + basket[i] + "</a>"
     basketList.appendChild(basketItems);
 }
 })
