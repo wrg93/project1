@@ -522,12 +522,10 @@ function generateList (anyList){
     for (var i=0; i<anyList.length; i++){
     var supplyItems=document.createElement("UL");
     supplyItems.innerHTML= anyList[i]
-   // supplyItems.setAttribute("class", "list");
+
     $(supplyItems).on("click", function(){
-           // this.setAttribute("class","toBeRemoved");
-            basketArray.push(this.innerHTML);
-            localStorage.setItem("basket",JSON.stringify(basketArray));
-            //renderBasket();
+        basketArray.push(this.innerHTML);
+        localStorage.setItem("basket",JSON.stringify(basketArray));
 
     })
     supplyList.appendChild(supplyItems);
@@ -572,13 +570,26 @@ function generateList (anyList){
     
     }
 }
-
+//displays items in shopping cart if shopping car is clixked
 $("#shopping-cart").on("click", function(){
-    var basketItems  = JSON.parse(localStorage.getItem("basket"))
-    $("#shopping-cart").append(basketItems);
+    var basket  = JSON.parse(localStorage.getItem("basket"))
+    console.log(basket);
 
+    var basketList = document.createElement("UL");
+
+    $("#shopping-cart").append(basketList);
+
+    for (var i=0; i<basket.length; i++){
+    
+    var basketItems = document.createElement("LI");
+
+
+    basketItems.textContent = basket[i];
+
+    
+    basketList.appendChild(basketItems);
+}
 })
-
 
 
 
