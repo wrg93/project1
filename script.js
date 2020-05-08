@@ -517,22 +517,6 @@ var England={
     alienInvasion: false
 };
 
-// var westText =[
-// "1906 san Francisco earthquake: 1906,3000+ deaths, 7.9mg",
-// "Paradise California wildfire: 2018, 85 deaths, deadliest fire in California history",
-// "Los Angeles flood: 1938, 115 deaths, deadliest disaster in LA history",
-// "Northridge earthquake: 1994, 60 deaths, 6.9 mg",
-// ]
-
-// function disasterRegion (regiontext){
-//     for (var i=0; i<regiontext.length; i++){
-//         var pEl = $("<p>")
-//         pEl.attr("class", "recent-disasters")
-//         pEl.text(regiontext[i])
-//         $("#disaster-list").append(pEl)
-//         console.log(pEl)
-//     }
-// }
 
 //variables to plug in dependents number
 var depNum = 0;
