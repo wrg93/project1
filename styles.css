@@ -324,3 +324,17 @@ h5 {
   margin: 12px 0;
 }
 
+table {
+  border: 3px solid lightskyblue;
+}
+
+th {
+
+  height: 70px;
+}
+
+td {
+
+  height: 60px;
+  padding-left: 8px;
+}
