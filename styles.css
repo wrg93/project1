@@ -331,10 +331,16 @@ table {
 th {
 
   height: 70px;
+  padding-left: 10px;
 }
 
 td {
 
   height: 60px;
-  padding-left: 8px;
+  padding-left: 10px;
+}
+
+#magnitude {
+
+  padding-left: 10px;
 }
