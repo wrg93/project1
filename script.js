@@ -755,42 +755,6 @@ function generateList (anyList){
     })
     supplyList.appendChild(supplyItems);
 
- 
-
-//function that renders Basket Items
-
-    
-    // if (basketItems === null){
-    //     return;
-        
-    // }
-
-
-
-   //On click event to add and display basket items from local storage
-// var basketArray = [];
-// $("#shopping-list").on("click", function(){
-//     this.setAttribute("class","toBeRemoved");
-//     basketArray.push(this.innerHTML);
-//     localStorage.setItem("basket",JSON.stringify(basketArray));
-//     renderBasket();
-// })
-
-
-    // supplyItems.innerHTML= "<a href= '#'>" + anyList[i] + "</a>"
-   
-    // var supplyTag=document.createElement("a")
-    // supplyTag.setAttribute("class","supplyTag")
-    // supplyTag.href="#";
-    // supplyItems.appendChild(supplyTag);
-
-    // var supplySpan=document.createElement("span");
-    // supplySpan.setAttribute("class", "fa-li");
-    // supplyItems.appendChild(supplySpan);
-
-    // var supplyIcon = document.createElement("i");
-    // supplyIcon.setAttribute("class", "fas fa-check-square");
-    // supplySpan.appendChild(supplyIcon);
 
     
     }
@@ -835,7 +799,7 @@ function currentLocation () {
             
         });
         //  call to mapquest API to get city and state based longitude and latitude
-        var queryURL = "http://www.mapquestapi.com/geocoding/v1/address?key=iJn3fnxq6GVxdR2Czn9tCFjMdpiLFMPf&location=" + lat + "," + long;
+        var queryURL = "https://www.mapquestapi.com/geocoding/v1/address?key=iJn3fnxq6GVxdR2Czn9tCFjMdpiLFMPf&location=" + lat + "," + long;
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -875,14 +839,6 @@ function currentLocation () {
                 $("#westdisasters").css("display", "none");
             }
             
-            // if(window[state1].region==="west"){
-            //     console.log(window[state1].region)
-            //     var h3El=$("<h2>")
-            //     h3El.attr("class","recent-disaster-head")
-            //     h3El.text("Western United States Disaster History ")
-            //     $("#disaster-list").append(h3El)
-            //     disasterRegion(westText);
-            // }
 
             // click event when generate list button is clicked for current location
             $("#generate").on("click",function(){
@@ -1227,16 +1183,6 @@ $("#new-location").on("click", function(){
             generateList(alienSupplyList);
     }}
 
-
-    //gathering which other lists to display based on state
-   
-   
-    // if (calledState.alienInvasion=true){
-    //     generateList(alienSupplyList);
-    // }
-    // if (calledState.zombieApocalypse=true){
-    //     generateList(zombieSupplyList);
-    // }
     
 })
 
